@@ -12,7 +12,11 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $faqs = DB::table('faqs')->get();
+   // return $faqs;
+    return view('faq', compact('faqs'));
+
+
 });
 
 Auth::routes();
