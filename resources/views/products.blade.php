@@ -7,14 +7,11 @@
 @include('layouts/general.header')
 
 
-@include('layouts/index.slider')
-@include('layouts/about.service')
+@include('layouts/products.parallax-products')
 @include('layouts/products.solution')
 @include('layouts/pricing.clients-logo')
-@include('layouts/index.testimonials-h')
-@include('layouts/pricing.info-pricing')
 @include('layouts/products.clients')
-@include('layouts/index.portafolio')
+
 
 
 

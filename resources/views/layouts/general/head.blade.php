@@ -1,7 +1,7 @@
 
-<html lang="en" class="no-js">
+
     <!-- BEGIN HEAD -->
-    <head>
+    
         <meta charset="utf-8"/>
         <title>Metronic "Asentus" Frontend Freebie</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -23,5 +23,5 @@
 
         <!-- Favicon -->
         <link rel="shortcut icon" href="favicon.ico"/>
-    </head>
+    
     <!-- END HEAD -->
