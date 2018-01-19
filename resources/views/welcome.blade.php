@@ -9,11 +9,11 @@
 
 @include('layouts/index.slider')
 @include('layouts/about.service')
-@include('layouts/products.solution')
+@include('layouts/index.lastest-products')
 @include('layouts/pricing.clients-logo')
 @include('layouts/index.testimonials-h')
 @include('layouts/pricing.info-pricing')
-@include('layouts/products.clients')
+@include('layouts/index.client-1')
 @include('layouts/index.portafolio')
 
 
