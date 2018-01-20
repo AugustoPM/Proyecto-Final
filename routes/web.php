@@ -11,14 +11,24 @@
 |
 */
 
-Route::get('/', function () {
-    $faqs = DB::table('faqs')->get();
+Route::get('/faq','FrontFaqController@faq');
+//('/faq', function () {
+   // $faqs = App\Faq::all();
    // return $faqs;
-    return view('faq', compact('faqs'));
+   // return view('faq', compact('faqs'));
+ 
+
+//});
+
+Route::get('/contact', 'FrontFaqController@contact');
+    //$contacts = App\Contact::all();
+   // return $faqs;
+   // return view('contact', compact('contacts'));
 
 
-});
+//});
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
