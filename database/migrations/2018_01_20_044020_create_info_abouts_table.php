@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateFaqparallaxesTable extends Migration
+class CreateInfoAboutsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class CreateFaqparallaxesTable extends Migration
      */
     public function up()
     {
-        Schema::create('faqparallaxes', function (Blueprint $table) {
+        Schema::create('info_abouts', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('title');
-            $table->text('description');
-            $table->text('description2');
+            $table->string('titulo');
+            $table->string('descripcion');
+            $table->string('desc_res');
             $table->timestamps();
         });
     }
@@ -29,6 +29,6 @@ class CreateFaqparallaxesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('faqparallaxes');
+        Schema::dropIfExists('info_abouts');
     }
 }

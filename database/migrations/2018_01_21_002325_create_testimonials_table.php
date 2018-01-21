@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateContactparallaxesTable extends Migration
+class CreateTestimonialsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,10 @@ class CreateContactparallaxesTable extends Migration
      */
     public function up()
     {
-        Schema::create('contactparallaxes', function (Blueprint $table) {
+        Schema::create('testimonials', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('title');
-            $table->text('description');
-            $table->text('description2');
+            $table->string('nota');
+            $table->string('escritor');
             $table->timestamps();
         });
     }
@@ -29,6 +28,6 @@ class CreateContactparallaxesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('contactparallaxes');
+        Schema::dropIfExists('testimonials');
     }
 }

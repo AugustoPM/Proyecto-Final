@@ -16,4 +16,7 @@
               </div>
           </div>
           @endforeach
-          <!-- End Contact List -->
+    </div>
+</div>
+</div> 
+         <!-- End Contact List -->

@@ -11,24 +11,19 @@
 |
 */
 
-Route::get('/faq','FrontFaqController@faq');
+Route::get('/faq','FrontFaqController@faq')->name('faq');
 //('/faq', function () {
    // $faqs = App\Faq::all();
    // return $faqs;
    // return view('faq', compact('faqs'));
- 
-
 //});
 
-Route::get('/contact', 'FrontFaqController@contact');
-    //$contacts = App\Contact::all();
-   // return $faqs;
-   // return view('contact', compact('contacts'));
-
-
-//});
+Route::get('/contact', 'FrontFaqController@contact')->name('contact');
+   
 
 Auth::routes();
-
+//Copiado de Augusto
 Route::get('/home', 'HomeController@index')->name('home');
-
+Route::get('/about', 'AboutController@index')->name('about');
+Route::get('/welcome','FrontFaqController@welcome')->name('welcome');
+    

@@ -8,6 +8,8 @@ use App\Faq2;
 use App\Contact;
 use App\Faqparallax;
 use App\Contactparallax;
+use App\Portada;
+use App\Service;
 
 class FrontFaqController extends Controller
 {
@@ -20,8 +22,8 @@ class FrontFaqController extends Controller
     {
        $faqs = Faq::all();
        $faq2s = Faq2::all();
-       $faqparallaxes = Faqparallax::all();
-       return view('faq', compact('faqs','faq2s','faqparallaxes'));
+       $portadas = Portada::all();
+       return view('faq', compact('faqs','faq2s','portadas'));
       }
       
       /**
@@ -32,8 +34,13 @@ class FrontFaqController extends Controller
       public function contact()
       {
       $contacts = Contact::all();
-      $contactparallaxes = Contactparallax::all();
-       return view('contact', compact('contacts','contactparallaxes'));
+      $portadas = Portada::all();
+       return view('contact', compact('contacts','portadas'));
     }
     
+    public function welcome()
+      {
+        $services = Service::all();
+       return view('welcome', compact('services'));
+    }
 }
