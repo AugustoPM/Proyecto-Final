@@ -11,25 +11,14 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/welcome', function () { 
+    return view ('welcome');
 });
-Route::get('/about', function () {
-    return view('about');
-});
-Route::get('/pricing', function () {
-    return view('pricing');
-});
-Route::get('/contact', function () {
-    return view('contact');
-});
-Route::get('/faq', function () {
-    return view('faq');
-});
-Route::get('/products', function () {
-    return view('products');
-});
+
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('');
+Route::get('/about', 'AboutController@index')->name('about');
+
+
