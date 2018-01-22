@@ -7,6 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class InfoAbout extends Model
 {
     protected $fillable = [
-   'titulo','descripcion','desc_res'
+   'titulo','descripcion','desc_res','id'
     ];
 }

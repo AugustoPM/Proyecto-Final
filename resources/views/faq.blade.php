@@ -8,7 +8,7 @@
 
 
 @include('layouts/faq.parallax-faq')
-@include('layouts/about.service')
+@include('layouts/faq.questions')
 @include('layouts/faq.gq')
 @include('layouts/pricing.info-pricing')
 

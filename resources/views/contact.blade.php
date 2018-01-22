@@ -1,20 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-@include('layouts/general.head')
-</head>
-<body>
-@include('layouts/general.header')
+<html lang="en" class="no-js">
+   @include('layouts/general.head')
 
+    <!-- BODY -->
+    <body>
 
-@include('layouts/contact.parallax-contact')
-@include('layouts/contact.list')
-@include('layouts/contact.map')
-@include('layouts/products.clients')
+        @include('layouts/general.header')
 
+        @include('layouts/contact.parallax-contact')
 
+        <!--========== PAGE LAYOUT ==========-->
+        @include('layouts/contact.list')
 
+       @include('layouts/contact.map')
+        <!-- Promo Section -->
+        @include('layouts/products.clients')
+        <!-- End Promo Section -->
+        <!--========== END PAGE LAYOUT ==========-->
 
-@include('layouts/general.footer')
-</body>
+       @include('layouts/general.footer')
+
+    
+
+    </body>
+    <!-- END BODY -->
 </html>

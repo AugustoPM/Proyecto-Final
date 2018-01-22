@@ -2,13 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use DB;
-use App\Portada;
-use App\InfoAbout;
+
+
+
 use App\AboutDes;
-use App\Service;
-use App\Testimonial;
-use App\Team;
 use Illuminate\Http\Request;
 
 class AboutController extends Controller

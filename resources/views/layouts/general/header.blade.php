@@ -24,12 +24,31 @@
         <div class="collapse navbar-collapse nav-collapse">
             <div class="menu-container">
                 <ul class="navbar-nav navbar-nav-right">
-                    <li class="nav-item"><a class="nav-item-child nav-item-hover" href="{{ 'home' }}">Home</a></li>
-                    <li class="nav-item"><a class="nav-item-child nav-item-hover" href="pricing.html">Pricing</a></li>
-                    <li class="nav-item"><a class="nav-item-child nav-item-hover active" href="{{ 'about' }}">About</a></li>
-                    <li class="nav-item"><a class="nav-item-child nav-item-hover" href="products.html">Products</a></li>
-                    <li class="nav-item"><a class="nav-item-child nav-item-hover" href="faq.html">FAQ</a></li>
-                    <li class="nav-item"><a class="nav-item-child nav-item-hover" href="contact.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-item-child nav-item-hover" href="{{ route('welcome') }}">Home</a></li>
+                    <li class="nav-item"><a class="nav-item-child nav-item-hover" href="{{ route('pricing') }}">Pricing</a></li>
+                    <li class="nav-item"><a class="nav-item-child nav-item-hover" href="{{ route('about') }}">About</a></li>
+                    <li class="nav-item"><a class="nav-item-child nav-item-hover" href="{{ route('product') }}">Products</a></li>
+                    <li class="nav-item"><a class="nav-item-child nav-item-hover" href="{{ route('faq') }}">FAQ</a></li>
+                    <li class="nav-item"><a class="nav-item-child nav-item-hover" href="{{ route('contact') }}">Contact</a></li>
+                    <li class="dropdown"><a href="" class="dropdown-toggle nav-item-child nav-item-hover" data-toggle="dropdown"
+                            role="button"
+                            aria-expanded="false"
+                            aria-haspopup="true">
+                            {{ Auth::user()->name }} <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="{{ route('logout') }}" onclick="
+                                    event.preventDefault();
+                                    document.getElementById('logout-form').submit();">Logout</a>
+                                    <form action="{{ route('logout') }}" id="logout-form" method="post">
+                                    {!! csrf_field() !!}
+                                    </form>
+                                </li>
+                                <li>
+                                    <a href="{{ route('admin') }}" >Modificar</a>
+                                    
+                                </li>
                 </ul>
             </div>
         </div>
