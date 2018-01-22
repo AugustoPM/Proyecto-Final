@@ -10,6 +10,8 @@ use App\Faqparallax;
 use App\Contactparallax;
 use App\Portada;
 use App\Service;
+use App\Product;
+use App\Client;
 
 class FrontFaqController extends Controller
 {
@@ -35,7 +37,8 @@ class FrontFaqController extends Controller
       {
       $contacts = Contact::all();
       $portadas = Portada::all();
-       return view('contact', compact('contacts','portadas'));
+      $clients = Client::all();
+       return view('contact', compact('contacts','portadas','clients'));
     }
     
     public function welcome()
@@ -43,4 +46,18 @@ class FrontFaqController extends Controller
         $services = Service::all();
        return view('welcome', compact('services'));
     }
+
+    public function admin()
+      {
+       
+       return view('admin');
+    }
+
+    public function product()
+    {
+       $products = Product::all();
+       $clients = Client::all();
+       $portadas = Portada::all();
+       return view('product', compact('products','clients','portadas'));
+      }
 }

@@ -1,8 +1,8 @@
 <!--========== PARALLAX ==========-->
 <div class="parallax-window" data-parallax="scroll" data-image-src="img/1920x1080/01.jpg">
             <div class="parallax-content container">
-                <h1 class="carousel-title">Products</h1>
-                <p>Lorem ipsum dolor amet consectetur adipiscing dolore magna aliqua <br/> enim minim estudiat veniam siad venumus dolore</p>
+                <h1 class="carousel-title">{{ $portadas[3]->titulo }}</h1>
+                <p>{{ $portadas[3]->subtitulo }} </p>
             </div>
 </div>
 <!--========== PARALLAX ==========-->

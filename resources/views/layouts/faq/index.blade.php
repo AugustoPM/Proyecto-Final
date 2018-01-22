@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en" class="no-js">
 <head>
-<?php echo $__env->make('layouts/general.head', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+@include('layouts/general.head')
 </head>
 <body>
-
+@extends('layouts/general.header')
 <div class="col-md-8">
     
                  <h1 class="page-header">
@@ -19,7 +19,7 @@
             </div>
           
 
-                <a href="<?php echo e(route('faq.create')); ?>" class="btn btn-success">
+                <a href="{{ route('faq.create') }}" class="btn btn-success">
                 <i class="glyphicon glyphicon-list"></i> New Faq
                 </a>
 
@@ -34,21 +34,21 @@
                 <th colspan="2">Actions</th>
             </tr>
 
-            <?php $__currentLoopData = $faqs; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $faq): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+            @foreach($faqs as $faq)
         <tr>
-            <td><?php echo e($faq->id); ?></td>
-            <td><?php echo e($faq->question); ?></td>
-            <td><?php echo e($faq->response); ?></td>
+            <td>{{ $faq->id }}</td>
+            <td>{{ $faq->question }}</td>
+            <td>{{ $faq->response }}</td>
            
             
             <td>
                
-                <a href="edit.html" class="btn btn-primary">
+                <a href="{{ route('faq.edit',$faq->id) }}" class="btn btn-primary">
                     <i class="glyphicon glyphicon-edit"></i>
                 </a>
             </td>
             <td>
-                <button class="btn btn-danger" data-action="destroy.html" data-name="<?php echo e($faq->question); ?>" data-toggle="modal"
+                <button class="btn btn-danger" data-action="{{ route('faq.destroy',$faq->id) }}" data-name="{{ $faq->question }}" data-toggle="modal"
                  data-target="#confirm-delete">
                      <i class="glyphicon glyphicon-trash"></i>
                 </button>
@@ -56,11 +56,9 @@
             </td>
         </tr>
 
-        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+        @endforeach
         
-        <tr>
-            <td colspan="8">prueba </td>
-        </tr>
+       
         </table>
 </div>
 <div class="modal fade" id="confirm-delete" tabindex="-1"
@@ -81,10 +79,8 @@
                                   role="form"
                                   method="POST"
                                   action="">
-                                <?php echo method_field('DELETE'); ?>
-
-                                <?php echo csrf_field(); ?>
-
+                                {!! method_field('DELETE') !!}
+                                {!! csrf_field() !!}
                                 <button type="button"
                                         class="btn btn-default"
                                         data-dismiss="modal">Cancelar
@@ -99,6 +95,26 @@
                 </div>
               </div>  
 
+<!-- Back To Top -->
+<a href="javascript:void(0);" class="js-back-to-top back-to-top">Top</a>
+
+<!-- JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
+<!-- CORE PLUGINS -->
+<script src="vendor/jquery.min.js" type="text/javascript"></script>
+<script src="vendor/jquery-migrate.min.js" type="text/javascript"></script>
+<script src="vendor/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+
+<!-- PAGE LEVEL PLUGINS -->
+<script src="vendor/jquery.easing.js" type="text/javascript"></script>
+<script src="vendor/jquery.back-to-top.js" type="text/javascript"></script>
+<script src="vendor/jquery.smooth-scroll.js" type="text/javascript"></script>
+<script src="vendor/jquery.wow.min.js" type="text/javascript"></script>
+<script src="vendor/jquery.parallax.min.js" type="text/javascript"></script>
+<script src="vendor/swiper/js/swiper.jquery.min.js" type="text/javascript"></script>
+
+<!-- PAGE LEVEL SCRIPTS -->
+<script src="js/layout.min.js" type="text/javascript"></script>
+<script src="js/components/swiper.min.js" type="text/javascript"></script>
+<script src="js/components/wow.min.js" type="text/javascript"></script>
 </body>
 </html>
-<?php echo $__env->make('layouts/general.header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

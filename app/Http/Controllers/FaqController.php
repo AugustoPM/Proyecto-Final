@@ -3,9 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Faq;
 
 class FaqController extends Controller
 {
+
+    // public function __construct(){
+    //     $this->middleware('auth');
+    // }
+
     /**
      * Display a listing of the resource.
      *
@@ -13,7 +19,9 @@ class FaqController extends Controller
      */
     public function index()
     {
-        //
+        $faqs = Faq::all();
+        return view('layouts/faq.index', compact('faqs'));
+    
     }
 
     /**
@@ -23,7 +31,7 @@ class FaqController extends Controller
      */
     public function create()
     {
-        //
+        return view('layouts/faq.create');
     }
 
     /**
@@ -34,7 +42,21 @@ class FaqController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'title' =>'required',
+                ]);
+
+            Faq::create([
+                'question' => $request->input('question'),
+                'response' => $request->input('response'),
+                'status' => $request->input('status'),
+                
+            ]);
+    
+            return redirect()
+            ->route('faqs')
+            ->with('status', 'Faq Creado Satisfactoriamente');
+        
     }
 
     /**
@@ -56,7 +78,8 @@ class FaqController extends Controller
      */
     public function edit($id)
     {
-        //
+        $faq = Faq::find($id);
+        return view('layouts.faq.edit', compact('faq'));
     }
 
     /**
@@ -68,7 +91,18 @@ class FaqController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $faq = Faq::find($id);
+        $faq->update([
+            
+            'question' => $request->input('question'),
+            'response' => $request->input('response'),
+            'status' => $request->input('status'),
+            
+        ]);
+
+        return redirect()
+        ->route('faqs')
+        ->with('status', 'Faq Modificado Satisfactoriamente');
     }
 
     /**
@@ -79,6 +113,9 @@ class FaqController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Faq::destroy($id);
+        return redirect()
+        ->route('faqs')
+        ->with('status', 'Faq Eliminado Satisfactoriamente');
     }
 }
