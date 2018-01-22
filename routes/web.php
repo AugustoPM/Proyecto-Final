@@ -11,10 +11,15 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/pricing','PricingController@pricing')->name('pricing');
+
+/*Route::get('/', function () {
+    return view('pricing');
+});*/
 
 Auth::routes();
 
+//Copiado de Augusto
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/about', 'AboutController@index')->name('about');
+Route::get('/welcome','FrontFaqController@welcome')->name('welcome');
