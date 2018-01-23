@@ -2,14 +2,16 @@
 
 namespace App\Http\Controllers;
 
-
-
-
-use App\AboutDes;
 use Illuminate\Http\Request;
+use App\AboutDes;
 
 class AboutController extends Controller
 {
+
+    public function __construct(){
+         $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -17,15 +19,10 @@ class AboutController extends Controller
      */
     public function index()
     {
-        $portadas = Portada::all();
-        $infos = InfoAbout::all();
         $abouts = AboutDes::all();
-        $services = Service::all();
-        $testimonials = Testimonial::all();
-        $teams = Team::all();
-        return view('about',compact('portadas','infos','abouts', 'services','testimonials', 'teams'));
-    }
+        return view('layouts.about.admin.aboutDes', compact('abouts'));
     
+    }
 
     /**
      * Show the form for creating a new resource.
@@ -34,7 +31,7 @@ class AboutController extends Controller
      */
     public function create()
     {
-        //
+        return view('layouts.about.admin.create2');
     }
 
     /**
@@ -45,16 +42,32 @@ class AboutController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'titulo' =>'required',
+            'descripcion' =>'required',
+                ]);
+
+           $about = AboutDes::create([
+                'titulo' => $request->input('titulo'),
+                'descripcion' => $request->input('descripcion'),
+                
+                // 'status' => $request->input('status'),
+                
+            ]);
+    
+            return redirect()
+            ->route('abouts')
+            ->with('status', 'Descripcion Creada Satisfactoriamente');
+        
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\About  $about
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(About $about)
+    public function show($id)
     {
         //
     }
@@ -62,34 +75,52 @@ class AboutController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\About  $about
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(About $about)
+    public function edit($id)
     {
-        //
+        $about = AboutDes::find($id);
+        return view('layouts.about.admin.edit2', compact('about'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\About  $about
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, About $about)
+    public function update(Request $request, $id)
     {
-        //
+        $about = AboutDes::find($id);
+        $about->update([
+            
+            'titulo' => $request->input('titulo'),
+            'descripcion' => $request->input('descripcion'),
+            
+            // 'status' => $request->input('status'),
+            
+        ]);
+
+        return redirect()
+        ->route('abouts');
+        // ->with('status', 'Informacion Modificada Satisfactoriamente');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\About  $about
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(About $about)
+    public function destroy($id)
     {
-        //
+        $about = AboutDes::destroy($id);
+        
+
+        return redirect()
+        ->route('abouts')
+        ->with('status', 'Descripcion Eliminada Satisfactoriamente');
     }
 }

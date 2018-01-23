@@ -12,9 +12,9 @@
 
             <!-- Logo -->
             <div class="logo">
-                <a class="logo-wrap" href="index.html">
-                    <img class="logo-img logo-img-main" src="img/logo.png" alt="Asentus Logo">
-                    <img class="logo-img logo-img-active" src="img/logo-dark.png" alt="Asentus Logo">
+                <a class="logo-wrap" href="{{ route('welcome') }}">
+                    <img class="logo-img logo-img-main" src="{{ asset('img/logo.png') }}" alt="Asentus Logo">
+                    <img class="logo-img logo-img-active" src="{{ asset('img/logo-dark.png') }}" alt="Asentus Logo">
                 </a>
             </div>
             <!-- End Logo -->
@@ -25,15 +25,17 @@
             <div class="menu-container">
                 <ul class="navbar-nav navbar-nav-right">
                     <li class="nav-item"><a class="nav-item-child nav-item-hover" href="{{ route('welcome') }}">Home</a></li>
-                    <li class="nav-item"><a class="nav-item-child nav-item-hover" href="pricing.html">Pricing</a></li>
+                    <li class="nav-item"><a class="nav-item-child nav-item-hover" href="{{ route('pricing') }}">Pricing</a></li>
                     <li class="nav-item"><a class="nav-item-child nav-item-hover" href="{{ route('about') }}">About</a></li>
                     <li class="nav-item"><a class="nav-item-child nav-item-hover" href="{{ route('product') }}">Products</a></li>
                     <li class="nav-item"><a class="nav-item-child nav-item-hover" href="{{ route('faq') }}">FAQ</a></li>
                     <li class="nav-item"><a class="nav-item-child nav-item-hover" href="{{ route('contact') }}">Contact</a></li>
+                  
                     <li class="dropdown"><a href="" class="dropdown-toggle nav-item-child nav-item-hover" data-toggle="dropdown"
                             role="button"
                             aria-expanded="false"
                             aria-haspopup="true">
+                            
                             {{ Auth::user()->name }} <span class="caret"></span>
                             </a>
                             <ul class="dropdown-menu">
@@ -45,6 +47,7 @@
                                     {!! csrf_field() !!}
                                     </form>
                                 </li>
+                                
                 </ul>
             </div>
         </div>
