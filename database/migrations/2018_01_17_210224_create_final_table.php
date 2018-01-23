@@ -18,9 +18,10 @@ class CreateFinalTable extends Migration
             //$table->img('thumbnail');
             $table->string('title')->default('title');
             $table->text('content');
-            $table->text('features');
-            
-
+            $table->text('value');
+            $table->text('features1');
+            $table->text('features2');            
+            $table->text('features3');
         });
     }
 

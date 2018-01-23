@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="en" class="no-js">
 <head>
-@include('layouts/general.head')
+@include('layouts.head')
 </head>
 <body>
-@include('layouts/general.header')
+@include('layouts.header')
+@include('layouts.parallax')
 
-@include('layouts/pricing.parallax-pricing')
-@include('layouts/pricing.clients-logo')
-@include('layouts/pricing.info-pricing')
-@include('layouts/pricing.testimonials')
+@include('layouts.pricing')
+@include('layouts.testimonials')
+@include('layouts.clients')
 
-@include('layouts/general.footer')
+@include('layouts.footer')
 </body>
 </html>

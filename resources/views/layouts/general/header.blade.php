@@ -24,11 +24,11 @@
         <div class="collapse navbar-collapse nav-collapse">
             <div class="menu-container">
                 <ul class="navbar-nav navbar-nav-right">
-                    <li class="nav-item"><a class="nav-item-child nav-item-hover" href="{{ route('welcome') }}">Home</a></li>
+                    <li class="nav-item"><a class="nav-item-child nav-item-hover" href="ndex.html">Home</a></li>
                     <li class="nav-item"><a class="nav-item-child nav-item-hover" href="pricing.html">Pricing</a></li>
-                    <li class="nav-item"><a class="nav-item-child nav-item-hover" href="{{ route('about') }}">About</a></li>
+                    <li class="nav-item"><a class="nav-item-child nav-item-hover" href="about.html">About</a></li>
                     <li class="nav-item"><a class="nav-item-child nav-item-hover" href="products.html">Products</a></li>
-                    <li class="nav-item"><a class="nav-item-child nav-item-hover" href="{{ route('faq') }}">FAQ</a></li>
+                    <li class="nav-item"><a class="nav-item-child nav-item-hover" href="faq.html>FAQ</a></li> 
                     <li class="nav-item"><a class="nav-item-child nav-item-hover" href="{{ route('contact') }}">Contact</a></li>
                 </ul>
             </div>
