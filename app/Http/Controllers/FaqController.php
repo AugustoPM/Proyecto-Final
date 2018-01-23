@@ -20,7 +20,7 @@ class FaqController extends Controller
     public function index()
     {
         $faqs = Faq::all();
-        return view('layouts/faq.index', compact('faqs'));
+        return view('layouts.faq.index', compact('faqs'));
     
     }
 
@@ -31,7 +31,7 @@ class FaqController extends Controller
      */
     public function create()
     {
-        return view('layouts/faq.create');
+        return view('layouts.faq.create');
     }
 
     /**
@@ -46,7 +46,7 @@ class FaqController extends Controller
             'question' =>'required',
                 ]);
 
-            Faq::create([
+           $faq = Faq::create([
                 'question' => $request->input('question'),
                 'response' => $request->input('response'),
                 // 'status' => $request->input('status'),
@@ -101,8 +101,8 @@ class FaqController extends Controller
         ]);
 
         return redirect()
-        ->route('faqs')
-        ->with('status', 'Faq Modificado Satisfactoriamente');
+        ->route('faqs');
+        // ->with('status', 'Faq Modificado Satisfactoriamente');
     }
 
     /**
@@ -113,7 +113,9 @@ class FaqController extends Controller
      */
     public function destroy($id)
     {
-        Faq::destroy($id);
+        $faq = Faq::destroy($id);
+        
+
         return redirect()
         ->route('faqs')
         ->with('status', 'Faq Eliminado Satisfactoriamente');

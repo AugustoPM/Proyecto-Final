@@ -25,7 +25,7 @@ Auth::routes();
 Route::get('/admin', 'HomeController@admin')->name('admin');
 
 //para que el admin pueda modificar
-Route::resource('/faqs', 'FaqController', ['names' => [
+Route::resource('/admin/faqs', 'FaqController', ['names' => [
     'index'=>'faqs',
     'create'=>'faq.create',
     'store'=>'faq.store',
@@ -34,13 +34,13 @@ Route::resource('/faqs', 'FaqController', ['names' => [
     'destroy'=>'faq.destroy'
 
 ]]);
-// Route::resource('/faq2s', 'Faq2Controller', ['names' => [
-//     'index'=>'faq2s',
-//     'create'=>'faq.create',
-//     'store'=>'faq.store',
-//     'edit'=>'faq.edit',
-//     'update'=>'faq.update',
-//     'destroy'=>'faq.destroy'
+ Route::resource('/admin/faq2s', 'Faq2Controller', ['names' => [
+     'index'=>'faq2s',
+     'create'=>'faq2.create',
+     'store'=>'faq2.store',
+     'edit'=>'faq2.edit',
+     'update'=>'faq2.update',
+     'destroy'=>'faq2.destroy'
 
-// ]]);
+ ]]);
     

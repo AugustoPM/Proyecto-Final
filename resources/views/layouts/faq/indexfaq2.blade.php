@@ -20,10 +20,13 @@
             </div> -->
           
 
-                <a href="{{ route('faq.create') }}" class="btn btn-success">
+                <a href="{{ route('faq2.create') }}" class="btn btn-success">
                 <i class="glyphicon glyphicon-list"></i> New Faq
                 </a>
 
+                <a href="{{ route('admin') }}" class="btn btn-primary">
+                <i class="glyphicon glyphicon-list"></i> Back
+                </a>
              <hr>
 
              <table class="table table-bordered">
@@ -45,13 +48,12 @@
              
              <td>
                 
-                 <button data-action="{{ route('faq.edit',$faq2->id) }}" class="btn btn-primary" data-toggle="modal"
-                 data-target="#confirm-edit{{ $faq2->id }}">
-                     <i class="glyphicon glyphicon-edit"></i>
-                 </button>
+             <a href="{{ route('faq2.edit',$faq2->id) }}" class="btn btn-primary">
+             <i class="glyphicon glyphicon-edit"></i>
+        </a>
              </td>
              <td>
-                 <button class="btn btn-danger" data-action="{{ route('faq.destroy',$faq2->id) }}" data-name="{{ $faq2->title }}" data-toggle="modal"
+                 <button class="btn btn-danger" data-action="{{ route('faq2.destroy',$faq2->id) }}" data-name="{{ $faq2->title }}" data-toggle="modal"
                   data-target="#confirm-delete">
                       <i class="glyphicon glyphicon-trash"></i>
                  </button>
@@ -59,57 +61,7 @@
              </td>
          </tr>
  
- <div class="modal fade" id="confirm-edit{{ $faq2->id }}" tabindex="-1"
-                  role="dialog" aria-labelledby="myModalLabel"
-                  aria-hidden="true">
-                 <div class="modal-dialog">
-                     <div class="modal-content">
-                         <div class="modal-header">
-                             <h3>Desea editar este registro?</h3>
-                         </div>
-                         <div class="modal-body">
-                             
-                         <form action="{{ route('faq.update', $faq2->id) }}" method="POST">
-     {!! csrf_field() !!} <!--  asi evitamos que un robot use nuestro formulario se utiliza put para poder editar el otro controlador que ya fue creado -->
-     {!! method_field('PUT') !!}
-     <div class="form-group has-feedback">
-         <input type="text" class="form-control" id="title" name="title" placeholder="Ingresa Titulo" value="{{ $faq2->title }}">
-     </div>
  
-    
-     <div class="form-group has-feedback">
-         <textarea class="form-control" id="description" name="description" placeholder="Ingresa Contenido">{{ $faq2->description }}</textarea>
-     </div>
-
-     <div class="form-group has-feedback">
-         <textarea class="form-control" id="description2" name="description2" placeholder="Ingresa Contenido">{{ $faq2->description2 }}</textarea>
-     </div>
- 
-    
-     </form>
-                         </div>
-                         <div class="modal-footer">
-                             <form class="form-inline form-edit"
-                                   role="form"
-                                   method="POST"
-                                   action="">
-     <button class="form-control btn btn-warning">
-     Guardar
-     </button>
-                                 
-                                 <button type="button"
-                                         class="btn btn-default"
-                                         data-dismiss="modal">Cancelar
-                                 </button>
-                                 <button id="edit-btn"
-                                         class="btn btn-primary"
-                                         title="editar">Editar
-                                 </button>
-                             </form>
-                         </div>
-                     </div>
-                 </div>
-               </div>  
          @endforeach
          
         

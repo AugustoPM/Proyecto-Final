@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en" class="no-js">
 <head>
-@extends('layouts/general.head')
+@include('layouts/general.head')
 </head>
 <body>
-@extends('layouts/general.header')
+@include('admin.header')
+@include('admin.parallaxAdmin')
 <div class="col-md-8">
     
                  <h1 class="page-header">

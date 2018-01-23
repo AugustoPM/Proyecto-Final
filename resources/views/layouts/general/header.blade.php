@@ -30,6 +30,7 @@
                     <li class="nav-item"><a class="nav-item-child nav-item-hover" href="{{ route('product') }}">Products</a></li>
                     <li class="nav-item"><a class="nav-item-child nav-item-hover" href="{{ route('faq') }}">FAQ</a></li>
                     <li class="nav-item"><a class="nav-item-child nav-item-hover" href="{{ route('contact') }}">Contact</a></li>
+                    @if(Auth::check())
                     <li class="dropdown"><a href="" class="dropdown-toggle nav-item-child nav-item-hover" data-toggle="dropdown"
                             role="button"
                             aria-expanded="false"
@@ -49,6 +50,7 @@
                                     <a href="{{ route('admin') }}" >Modificar</a>
                                     
                                 </li>
+                                @endif
                 </ul>
             </div>
         </div>

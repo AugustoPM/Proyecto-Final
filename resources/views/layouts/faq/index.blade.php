@@ -24,6 +24,10 @@
                 <i class="glyphicon glyphicon-list"></i> New Faq
                 </a>
 
+                <a href="{{ route('admin') }}" class="btn btn-primary">
+                <i class="glyphicon glyphicon-list"></i> Back
+                </a>
+
              <hr>
 
              <table class="table table-bordered">
@@ -44,10 +48,9 @@
              
              <td>
                 
-                 <button data-action="{{ route('faq.edit',$faq->id) }}" class="btn btn-primary" data-toggle="modal"
-                 data-target="#confirm-edit{{ $faq->id }}">
+                 <a href="{{ route('faq.edit',$faq->id) }}" class="btn btn-primary">
                      <i class="glyphicon glyphicon-edit"></i>
-                 </button>
+                </a>
              </td>
              <td>
                  <button class="btn btn-danger" data-action="{{ route('faq.destroy',$faq->id) }}" data-name="{{ $faq->question }}" data-toggle="modal"
@@ -58,53 +61,7 @@
              </td>
          </tr>
  
- <div class="modal fade" id="confirm-edit{{ $faq->id }}" tabindex="-1"
-                  role="dialog" aria-labelledby="myModalLabel"
-                  aria-hidden="true">
-                 <div class="modal-dialog">
-                     <div class="modal-content">
-                         <div class="modal-header">
-                             <h3>Desea editar este registro?</h3>
-                         </div>
-                         <div class="modal-body">
-                             
-                         <form action="{{ route('faq.update', $faq->id) }}" method="POST">
-     {!! csrf_field() !!} <!--  asi evitamos que un robot use nuestro formulario se utiliza put para poder editar el otro controlador que ya fue creado -->
-     {!! method_field('PUT') !!}
-     <div class="form-group has-feedback">
-         <input type="text" class="form-control" id="question" name="question" placeholder="Ingresa Titulo" value="{{ $faq->question }}">
-     </div>
  
-    
-     <div class="form-group has-feedback">
-         <textarea class="form-control" id="response" name="response" placeholder="Ingresa Contenido">{{ $faq->response }}</textarea>
-     </div>
- 
-    
-     </form>
-                         </div>
-                         <div class="modal-footer">
-                             <form class="form-inline form-edit"
-                                   role="form"
-                                   method="POST"
-                                   action="">
-     <button class="form-control btn btn-warning">
-     Guardar
-     </button>
-                                 
-                                 <button type="button"
-                                         class="btn btn-default"
-                                         data-dismiss="modal">Cancelar
-                                 </button>
-                                 <button id="edit-btn"
-                                         class="btn btn-primary"
-                                         title="editar">Editar
-                                 </button>
-                             </form>
-                         </div>
-                     </div>
-                 </div>
-               </div>  
          @endforeach
          
         

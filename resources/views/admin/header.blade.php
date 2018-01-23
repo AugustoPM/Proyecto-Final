@@ -30,10 +30,12 @@
                     <li class="nav-item"><a class="nav-item-child nav-item-hover" href="{{ route('product') }}">Products</a></li>
                     <li class="nav-item"><a class="nav-item-child nav-item-hover" href="{{ route('faq') }}">FAQ</a></li>
                     <li class="nav-item"><a class="nav-item-child nav-item-hover" href="{{ route('contact') }}">Contact</a></li>
+                  
                     <li class="dropdown"><a href="" class="dropdown-toggle nav-item-child nav-item-hover" data-toggle="dropdown"
                             role="button"
                             aria-expanded="false"
                             aria-haspopup="true">
+                            
                             {{ Auth::user()->name }} <span class="caret"></span>
                             </a>
                             <ul class="dropdown-menu">
@@ -45,6 +47,7 @@
                                     {!! csrf_field() !!}
                                     </form>
                                 </li>
+                                
                 </ul>
             </div>
         </div>
