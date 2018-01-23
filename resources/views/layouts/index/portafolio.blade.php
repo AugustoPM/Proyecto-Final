@@ -11,9 +11,14 @@
 
     <!-- Masonry Grid -->
     <div class="masonry-grid">
-        <div class="masonry-grid-sizer col-xs-6 col-sm-6 col-md-1"></div>
+        
+            <div class="masonry-grid-sizer col-xs-6 col-sm-6 col-md-1"></div>
+       
+       
         <div class="masonry-grid-item col-xs-12 col-sm-6 col-md-8">
-            <!-- Work -->
+           
+        
+        <!-- Work -->
             <div class="work wow fadeInUp" data-wow-duration=".3" data-wow-delay=".1s">
                 <div class="work-overlay">
                     <img class="full-width img-responsive" src="img/800x400/01.jpg" alt="Portfolio Image">
@@ -25,8 +30,11 @@
                 <a class="content-wrapper-link" href="#"></a>
             </div>
             <!-- End Work -->
+       
         </div>
+
         <div class="masonry-grid-item col-xs-6 col-sm-6 col-md-4">
+
             <!-- Work -->
             <div class="work wow fadeInUp" data-wow-duration=".3" data-wow-delay=".2s">
                 <div class="work-overlay">
@@ -39,8 +47,11 @@
                 <a class="content-wrapper-link" href="#"></a>
             </div>
             <!-- End Work -->
+
         </div>
+
         <div class="masonry-grid-item col-xs-6 col-sm-6 col-md-4">
+
             <!-- Work -->
             <div class="work wow fadeInUp" data-wow-duration=".3" data-wow-delay=".3s">
                 <div class="work-overlay">
@@ -53,8 +64,11 @@
                 <a class="content-wrapper-link" href="#"></a>
             </div>
             <!-- End Work -->
+
         </div>
+
         <div class="masonry-grid-item col-xs-6 col-sm-6 col-md-4">
+
             <!-- Work -->
             <div class="work wow fadeInUp" data-wow-duration=".3" data-wow-delay=".4s">
                 <div class="work-overlay">
@@ -67,8 +81,11 @@
                 <a class="content-wrapper-link" href="#"></a>
             </div>
             <!-- End Work -->
+
         </div>
+
         <div class="masonry-grid-item col-xs-6 col-sm-6 col-md-4">
+
             <!-- Work -->
             <div class="work wow fadeInUp" data-wow-duration=".3" data-wow-delay=".5s">
                 <div class="work-overlay">
@@ -81,9 +98,12 @@
                 <a class="content-wrapper-link" href="#"></a>
             </div>
             <!-- End Work -->
+
         </div>
+
     </div>
     <!-- End Masonry Grid -->
 </div>
 </div>
+
 <!-- End Work -->

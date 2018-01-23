@@ -8,9 +8,9 @@ use App\Faq;
 class FaqController extends Controller
 {
 
-    // public function __construct(){
-    //     $this->middleware('auth');
-    // }
+    public function __construct(){
+         $this->middleware('auth');
+    }
 
     /**
      * Display a listing of the resource.
@@ -43,7 +43,7 @@ class FaqController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'title' =>'required',
+            'question' =>'required',
                 ]);
 
             Faq::create([

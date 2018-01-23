@@ -116,5 +116,12 @@
 <script src="js/layout.min.js" type="text/javascript"></script>
 <script src="js/components/swiper.min.js" type="text/javascript"></script>
 <script src="js/components/wow.min.js" type="text/javascript"></script>
+
+<script type="application/javascript">
+        $('#confirm-delete').on('show.bs.modal', function (e) {
+            $(this).find('.form-delete').attr('action', $(e.relatedTarget).data('action'));
+            $(this).find('.nombre').text($(e.relatedTarget).data('name'));
+        });
+    </script>
 </body>
 </html>

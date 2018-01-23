@@ -4,7 +4,7 @@
 @include('layouts/general.head')
 </head>
 <body>
-@include('layouts/general.header')
+@include('admin.header')
 
 <!--========== PARALLAX ==========-->
 <div class="parallax-window" data-parallax="scroll" data-image-src="img/1920x1080/01.jpg">

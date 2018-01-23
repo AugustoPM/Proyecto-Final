@@ -11,17 +11,18 @@
 |
 */
 
-Route::get('/faq','FrontFaqController@faq')->name('faq');
-Route::get('/contact', 'FrontFaqController@contact')->name('contact');
-Route::get('/welcome','FrontFaqController@welcome')->name('welcome');
-Route::get('/admin','FrontFaqController@admin')->name('admin');
+Route::get('/faq','FrontController@faq')->name('faq');
+Route::get('/contact', 'FrontController@contact')->name('contact');
+Route::get('/welcome','FrontController@welcome')->name('welcome');
+//Route::get('/admin','FrontController@admin')->name('admin');
  //copiade Carrascal
-Route::get('/product','FrontFaqController@Product')->name('product');  
+Route::get('/product','FrontController@Product')->name('product');  
+//Copiado de Augusto
+Route::get('/about', 'FrontController@about')->name('about');
+
 
 Auth::routes();
-//Copiado de Augusto
-Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/about', 'AboutController@index')->name('about');
+Route::get('/admin', 'HomeController@admin')->name('admin');
 
 //para que el admin pueda modificar
 Route::resource('/faqs', 'FaqController', ['names' => [

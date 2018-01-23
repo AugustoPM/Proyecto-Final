@@ -12,8 +12,12 @@ use App\Portada;
 use App\Service;
 use App\Product;
 use App\Client;
+use App\InfoAbout;
+use App\AboutDes;
+use App\Testimonial;
+use App\Team;
 
-class FrontFaqController extends Controller
+class FrontController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -59,5 +63,16 @@ class FrontFaqController extends Controller
        $clients = Client::all();
        $portadas = Portada::all();
        return view('product', compact('products','clients','portadas'));
+      }
+
+      public function about()
+      {
+          $portadas = Portada::all();
+          $infos = InfoAbout::all();
+          $abouts = AboutDes::all();
+          $services = Service::all();
+          $testimonials = Testimonial::all();
+          $teams = Team::all();
+          return view('about',compact('portadas','infos','abouts', 'services','testimonials', 'teams'));
       }
 }

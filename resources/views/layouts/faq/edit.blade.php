@@ -16,12 +16,12 @@
     {!! csrf_field() !!} <!--  asi evitamos que un robot use nuestro formulario se utiliza put para poder editar el otro controlador que ya fue creado -->
     {!! method_field('PUT') !!}
     <div class="form-group has-feedback">
-        <input type="text" class="form-control" id="title" name="title" placeholder="Ingresa Titulo" value="{{ $faq->question }}">
+        <input type="text" class="form-control" id="question" name="question" placeholder="Ingresa Titulo" value="{{ $faq->question }}">
     </div>
 
    
     <div class="form-group has-feedback">
-        <textarea class="form-control" id="content" name="content" placeholder="Ingresa Contenido">{{ $faq->response }}</textarea>
+        <textarea class="form-control" id="response" name="response" placeholder="Ingresa Contenido">{{ $faq->response }}</textarea>
     </div>
 
    

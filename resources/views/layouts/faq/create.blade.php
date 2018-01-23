@@ -19,20 +19,23 @@
 
  
 
-    <div class="form-group has-feedback {{ $errors->has('title') ? 'has-error' : '' }}">
-        <input type="text" class="form-control" id="title" name="title" placeholder="Ingresa Titulo" value="{{ old('title') }}">
-        @if($errors->has('title'))
+    <!-- <div class="form-group has-feedback {{ $errors->has('question') ? 'has-error' : '' }}">
+        <input type="text" class="form-control" id="question" name="question" placeholder="Ingresa Titulo" value="{{ old('question') }}">
+        @if($errors->has('question'))
             <span class="help-block">
-                <strong>{{ $errors->first('title') }}</strong>
+                <strong>{{ $errors->first('question') }}</strong>
             </span>
 
         @endif
-    </div>
-
-      
+    </div> -->
 
     <div class="form-group has-feedback">
-        <textarea class="form-control" id="content" name="content" placeholder="Ingresa Respuesta">{{ old('content') }}</textarea>
+            <input type="text" class="form-control" id="question" name="question" 
+            placeholder="Ingrese question" value="{{ old('question') }}">
+        </div>
+
+    <div class="form-group has-feedback">
+        <textarea class="form-control" id="response" name="response" placeholder="Ingresa Respuesta">{{ old('content') }}</textarea>
     </div>
 
    
