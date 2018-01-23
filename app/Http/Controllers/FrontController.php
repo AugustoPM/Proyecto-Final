@@ -50,9 +50,10 @@ class FrontController extends Controller
     
     public function welcome()
       {
+        $portadas = Portada::all();
         $services = Service::all();
         $pricings = Pricing::all();
-       return view('welcome', compact('pricings','services'));
+       return view('welcome', compact('pricings','services','portadas'));
     }
 
    

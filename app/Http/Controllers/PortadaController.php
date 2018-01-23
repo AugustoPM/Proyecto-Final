@@ -75,8 +75,9 @@ class PortadaController extends Controller
      */
     public function edit($id)
     {
+        $portadas = Portada::all();
         $portada = Portada::find($id);
-        return view('layouts.general.admin.edit', compact('portada'));
+        return view('layouts.general.admin.edit', compact('portada', 'portadas'));
     }
 
     /**

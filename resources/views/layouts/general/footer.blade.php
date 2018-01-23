@@ -7,14 +7,12 @@
                         <div class="col-sm-2 sm-margin-b-50">
                             <!-- List -->
                             <ul class="list-unstyled footer-list">
-                                <li class="footer-list-item"><a class="footer-list-link" href="{{ route('welcome') }}">Home</a></li>
-                                <li class="footer-list-item"><a class="footer-list-link" href="{{ route('about') }}">About</a></li>
-                                <li class="footer-list-item"><a class="footer-list-link" href="{{ route('product') }}">Products</a></li>
-                                <li class="footer-list-item"><a class="footer-list-link" href="{{ route('pricing') }}">Pricing</a></li>
-                                <li class="footer-list-item"><a class="footer-list-link" href="#">Clients</a></li>
-                                <li class="footer-list-item"><a class="footer-list-link" href="#">Careers</a></li>
-                                <li class="footer-list-item"><a class="footer-list-link" href="{{ route('contact') }}">Contact</a></li>
-                                <li class="footer-list-item"><a class="footer-list-link" href="#">Terms</a></li>
+                            <li class="nav-item"><a class="nav-item-child nav-item-hover" href="{{ route('welcome') }}">{{ $portadas[0]->titulo }}</a></li>
+                            <li class="nav-item"><a class="nav-item-child nav-item-hover" href="{{ route('pricing') }}">{{ $portadas[1]->titulo }}</a></li>
+                            <li class="nav-item"><a class="nav-item-child nav-item-hover" href="{{ route('about') }}">{{ $portadas[2]->titulo }}</a></li>
+                            <li class="nav-item"><a class="nav-item-child nav-item-hover" href="{{ route('product') }}">{{ $portadas[3]->titulo }}</a></li>
+                            <li class="nav-item"><a class="nav-item-child nav-item-hover" href="{{ route('faq') }}">{{ $portadas[4]->titulo }}</a></li>
+                            <li class="nav-item"><a class="nav-item-child nav-item-hover" href="{{ route('contact') }}">{{ $portadas[5]->titulo }}</a></li>
                             </ul>
                             <!-- End List -->
                         </div>
