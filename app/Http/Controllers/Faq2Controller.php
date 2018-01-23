@@ -3,9 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Faq2;
 
 class Faq2Controller extends Controller
 {
+    public function __construct(){
+        $this->middleware('auth');
+   }
     /**
      * Display a listing of the resource.
      *
@@ -13,7 +17,8 @@ class Faq2Controller extends Controller
      */
     public function index()
     {
-        //
+        $faq2s = Faq2::all();
+        return view('layouts/faq.indexfaq2', compact('faq2s'));
     }
 
     /**
@@ -23,7 +28,7 @@ class Faq2Controller extends Controller
      */
     public function create()
     {
-        //
+        return view('layouts/faq.create');
     }
 
     /**
@@ -34,7 +39,22 @@ class Faq2Controller extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'title' =>'required',
+                ]);
+
+            Faq2::create([
+                'title' => $request->input('title'),
+                'description' => $request->input('description'),
+                'description2' => $request->input('description2'),
+                // 'status' => $request->input('status'),
+                
+            ]);
+    
+            return redirect()
+            ->route('faq2s')
+            ->with('status', 'Faq2 Creado Satisfactoriamente');
+        
     }
 
     /**
@@ -56,7 +76,8 @@ class Faq2Controller extends Controller
      */
     public function edit($id)
     {
-        //
+        $faq2 = Faq2::find($id);
+        return view('layouts.faq2.edit', compact('faq2'));
     }
 
     /**
@@ -68,7 +89,19 @@ class Faq2Controller extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $faq2 = Faq2::find($id);
+        $faq2->update([
+            
+            'title' => $request->input('title'),
+                'description' => $request->input('description'),
+                'description2' => $request->input('description2'),
+            // 'status' => $request->input('status'),
+            
+        ]);
+
+        return redirect()
+        ->route('faq2s')
+        ->with('status', 'Faq2 Modificado Satisfactoriamente');
     }
 
     /**
@@ -79,6 +112,9 @@ class Faq2Controller extends Controller
      */
     public function destroy($id)
     {
-        //
+        Faq2::destroy($id);
+        return redirect()
+        ->route('faq2s')
+        ->with('status', 'Faq Eliminado Satisfactoriamente');
     }
 }

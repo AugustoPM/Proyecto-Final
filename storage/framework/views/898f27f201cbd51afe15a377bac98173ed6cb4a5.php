@@ -29,8 +29,7 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="<?php echo e(url('/')); ?>">
-                        <?php echo e(config('app.name', 'Laravel')); ?>
-
+                    <img class="logo-img logo-img-active" src="img/logo-dark.png" alt="Asentus Logo">
                     </a>
                 </div>
 

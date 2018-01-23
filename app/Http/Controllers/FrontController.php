@@ -16,6 +16,8 @@ use App\InfoAbout;
 use App\AboutDes;
 use App\Testimonial;
 use App\Team;
+use App\Pricing;
+use App\TestimonialPri;
 
 class FrontController extends Controller
 {
@@ -29,7 +31,8 @@ class FrontController extends Controller
        $faqs = Faq::all();
        $faq2s = Faq2::all();
        $portadas = Portada::all();
-       return view('faq', compact('faqs','faq2s','portadas'));
+       $pricings = Pricing::all();
+       return view('faq', compact('faqs','faq2s','pricings','portadas'));
       }
       
       /**
@@ -48,14 +51,11 @@ class FrontController extends Controller
     public function welcome()
       {
         $services = Service::all();
-       return view('welcome', compact('services'));
+        $pricings = Pricing::all();
+       return view('welcome', compact('pricings','services'));
     }
 
-    public function admin()
-      {
-       
-       return view('admin');
-    }
+   
 
     public function product()
     {
@@ -75,4 +75,13 @@ class FrontController extends Controller
           $teams = Team::all();
           return view('about',compact('portadas','infos','abouts', 'services','testimonials', 'teams'));
       }
+
+      public function pricing()
+    {
+       $pricings = Pricing::all();
+       $testimonials = TestimonialPri::all();
+       $portadas = Portada::all();
+       return view('pricing', compact('pricings','testimonials','portadas'));
+      }
+
 }

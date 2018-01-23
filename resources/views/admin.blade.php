@@ -7,20 +7,15 @@
 @include('admin.header')
 
 <!--========== PARALLAX ==========-->
-<div class="parallax-window" data-parallax="scroll" data-image-src="img/1920x1080/01.jpg">
-            <div class="parallax-content container">
-                <h1 class="carousel-title">Bienvenido Administrador</h1>
-                <p>Modulo de Partes que pueden ser Modfifcadas</p>
-            </div>
-</div>
+@include('admin.parallaxAdmin')
 <!--========== PARALLAX ==========-->
 
 
              
-             <div class="alert alert-success alert-dismissible" role="alert">
+             <!-- <div class="alert alert-success alert-dismissible" role="alert">
              <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
              <strong>Info!</strong> 
-            </div>
+            </div> -->
           
 
                
@@ -36,13 +31,13 @@
                 <li>Teams</li>
                 <li>Testimonials</li>
                 <li><a href="{{ route('faqs') }}">Faqs</a></li>
-                <li>Faqs Description</li>
+                <li><a href="{{ route('faq2s') }}">Faqs Description</a></li>
          </ul>
            
             
           
 
-   @include('layouts/general.footer')
+   @include('admin.footer')
     
 </body>
 </html>

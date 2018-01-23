@@ -49,7 +49,7 @@ class FaqController extends Controller
             Faq::create([
                 'question' => $request->input('question'),
                 'response' => $request->input('response'),
-                'status' => $request->input('status'),
+                // 'status' => $request->input('status'),
                 
             ]);
     
@@ -96,7 +96,7 @@ class FaqController extends Controller
             
             'question' => $request->input('question'),
             'response' => $request->input('response'),
-            'status' => $request->input('status'),
+            // 'status' => $request->input('status'),
             
         ]);
 

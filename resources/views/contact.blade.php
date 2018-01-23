@@ -5,22 +5,27 @@
     <!-- BODY -->
     <body>
 
+        <!--========== HEADER ==========-->
         @include('layouts/general.header')
+        <!--========== END HEADER ==========-->
 
+        <!--========== PARALLAX ==========-->
         @include('layouts/contact.parallax-contact')
+        <!--========== PARALLAX ==========-->
 
         <!--========== PAGE LAYOUT ==========-->
         @include('layouts/contact.list')
 
-       @include('layouts/contact.map')
+        <!-- Google Map -->
+        @include('layouts/contact.map')
+
         <!-- Promo Section -->
         @include('layouts/products.clients')
         <!-- End Promo Section -->
         <!--========== END PAGE LAYOUT ==========-->
 
-       @include('layouts/general.footer')
-
-    
+        <!--========== FOOTER ==========-->
+         @include('layouts/general.footer')
 
     </body>
     <!-- END BODY -->
