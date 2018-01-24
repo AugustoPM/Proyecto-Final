@@ -18,18 +18,6 @@
     {!! method_field('POST') !!}
 
 
- 
-
-    <!-- <div class="form-group has-feedback {{ $errors->has('question') ? 'has-error' : '' }}">
-        <input type="text" class="form-control" id="question" name="question" placeholder="Ingresa Titulo" value="{{ old('question') }}">
-        @if($errors->has('question'))
-            <span class="help-block">
-                <strong>{{ $errors->first('question') }}</strong>
-            </span>
-
-        @endif
-    </div> -->
-
     <div class="form-group has-feedback">
             <input type="text" class="form-control" id="question" name="question" 
             placeholder="Ingrese question" value="{{ old('question') }}">

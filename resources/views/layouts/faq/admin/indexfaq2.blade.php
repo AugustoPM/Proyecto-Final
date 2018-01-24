@@ -21,7 +21,7 @@
           
 
                 <a href="{{ route('faq2.create') }}" class="btn btn-success">
-                <i class="glyphicon glyphicon-list"></i> New Faq
+                <i class="glyphicon glyphicon-list"></i> New Faq Desc
                 </a>
 
                 <a href="{{ route('admin') }}" class="btn btn-primary">

@@ -18,7 +18,7 @@ class Faq2Controller extends Controller
     public function index()
     {
         $faq2s = Faq2::all();
-        return view('layouts/faq.indexfaq2', compact('faq2s'));
+        return view('layouts.faq.admin.indexfaq2', compact('faq2s'));
     }
 
     /**
@@ -28,7 +28,7 @@ class Faq2Controller extends Controller
      */
     public function create()
     {
-        return view('layouts/faq.create');
+        return view('layouts.faq.admin.createfaq2');
     }
 
     /**
@@ -77,7 +77,7 @@ class Faq2Controller extends Controller
     public function edit($id)
     {
         $faq2 = Faq2::find($id);
-        return view('layouts.faq2.edit', compact('faq2'));
+        return view('layouts.faq.admin.editfaq2', compact('faq2'));
     }
 
     /**
