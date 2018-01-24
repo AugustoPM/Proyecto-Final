@@ -9,8 +9,8 @@
 <div class="col-md-8">
     
                  <h1 class="page-header">
-                     Listado de FAQs
-                      <small>Modulo de Preguntas Frecuentes</small>
+                     Listado de Productos
+                      <small>Modulo de Productos</small>
                   </h1>
 
              
@@ -20,8 +20,8 @@
             </div> -->
           
 
-                <a href="{{ route('faq.create') }}" class="btn btn-success">
-                <i class="glyphicon glyphicon-list"></i> Nueva FAQ
+                <a href="{{ route('product.create') }}" class="btn btn-success">
+                <i class="glyphicon glyphicon-list"></i> Nuevo Producto
                 </a>
 
                 <a href="{{ route('admin') }}" class="btn btn-primary">
@@ -33,27 +33,29 @@
              <table class="table table-bordered">
              <tr>
                  <th>#</th>
-                 <th>Pregunta</th>
-                 <th>Respuesta</th>
+                 <th>Nombre</th>
+                 <th>Categoria</th>
+                 <th>Descripcion</th>
                 
                  <th colspan="2">Actions</th>
              </tr>
  
-             @foreach($faqs as $faq)
+             @foreach($products as $product)
          <tr>
-             <td>{{ $faq->id }}</td>
-             <td>{{ $faq->question }}</td>
-             <td>{{ $faq->response }}</td>
+             <td>{{ $product->id }}</td>
+             <td>{{ $product->title }}</td>
+             <td>{{ $product->subtitle }}</td>
+             <td>{{ $product->text }}</td>
             
              
              <td>
                 
-                 <a href="{{ route('faq.edit',$faq->id) }}" class="btn btn-primary">
+                 <a href="{{ route('product.edit',$product->id) }}" class="btn btn-primary">
                      <i class="glyphicon glyphicon-edit"></i>
                 </a>
              </td>
              <td>
-                 <button class="btn btn-danger" data-action="{{ route('faq.destroy',$faq->id) }}" data-name="{{ $faq->question }}" data-toggle="modal"
+                 <button class="btn btn-danger" data-action="{{ route('product.destroy',$product->id) }}" data-name="{{ $product->question }}" data-toggle="modal"
                   data-target="#confirm-delete">
                       <i class="glyphicon glyphicon-trash"></i>
                  </button>

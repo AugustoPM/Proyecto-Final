@@ -26,7 +26,7 @@
     </div>
 
     <div class="form-group has-feedback">
-        <textarea class="form-control" id="description2" name="description2" placeholder="Ingresa description">{{ $faq2->description2 }}</textarea>
+        <textarea class="form-control" id="description2" name="description2" placeholder="Ingresa Contenido">{{ $faq2->description2 }}</textarea>
     </div>
    
     <button class="form-control btn btn-warning">

@@ -32,15 +32,15 @@
 
     <div class="form-group has-feedback">
             <input type="text" class="form-control" id="title" name="title" 
-            placeholder="Ingrese title" value="{{ old('title') }}">
+            placeholder="Ingrese Titulo" value="{{ old('title') }}">
         </div>
 
     <div class="form-group has-feedback">
-        <textarea class="form-control" id="description" name="description" placeholder="Ingresa description">{{ old('content') }}</textarea>
+        <textarea class="form-control" id="description" name="description" placeholder="Ingresa Parrafo 1">{{ old('content') }}</textarea>
     </div>
 
     <div class="form-group has-feedback">
-        <textarea class="form-control" id="description2" name="description2" placeholder="Ingresa description">{{ old('content') }}</textarea>
+        <textarea class="form-control" id="description2" name="description2" placeholder="Ingresa Parrafo 2">{{ old('content') }}</textarea>
     </div>
 
    

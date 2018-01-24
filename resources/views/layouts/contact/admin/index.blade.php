@@ -9,8 +9,8 @@
 <div class="col-md-8">
     
                  <h1 class="page-header">
-                     Listado de FAQs
-                      <small>Modulo de Preguntas Frecuentes</small>
+                     Listado de Ciudades
+                      <small>Modulo de Agencias</small>
                   </h1>
 
              
@@ -20,12 +20,12 @@
             </div> -->
           
 
-                <a href="{{ route('faq.create') }}" class="btn btn-success">
-                <i class="glyphicon glyphicon-list"></i> Nueva FAQ
+                <a href="{{ route('city.create') }}" class="btn btn-success">
+                <i class="glyphicon glyphicon-list"></i> New Faq
                 </a>
 
                 <a href="{{ route('admin') }}" class="btn btn-primary">
-                <i class="glyphicon glyphicon-list"></i> Atras
+                <i class="glyphicon glyphicon-list"></i> Back
                 </a>
 
              <hr>
@@ -33,27 +33,33 @@
              <table class="table table-bordered">
              <tr>
                  <th>#</th>
-                 <th>Pregunta</th>
-                 <th>Respuesta</th>
+                 <th>Ciudad</th>
+                 <th>Descripcion</th>
+                 <th>Direccion</th>
+                 <th>Numero</th>
+                 <th>Email</th>
                 
                  <th colspan="2">Actions</th>
              </tr>
  
-             @foreach($faqs as $faq)
+             @foreach ($contacts as $contact)
          <tr>
-             <td>{{ $faq->id }}</td>
-             <td>{{ $faq->question }}</td>
-             <td>{{ $faq->response }}</td>
+             <td>{{ $contact->id }}</td>
+             <td>{{ $contact->city }}</td>
+             <td>{{ $contact->title }}</td>
+             <td>{{ $contact->description }}</td>
+             <td>{{ $contact->number }}</td>
+             <td>{{ $contact->email }}</td>
             
              
              <td>
                 
-                 <a href="{{ route('faq.edit',$faq->id) }}" class="btn btn-primary">
+                 <a href="{{ route('city.edit',$contact->id) }}" class="btn btn-primary">
                      <i class="glyphicon glyphicon-edit"></i>
                 </a>
              </td>
              <td>
-                 <button class="btn btn-danger" data-action="{{ route('faq.destroy',$faq->id) }}" data-name="{{ $faq->question }}" data-toggle="modal"
+                 <button class="btn btn-danger" data-action="{{ route('city.destroy',$contact->id) }}" data-name="{{ $contact->city }}" data-toggle="modal"
                   data-target="#confirm-delete">
                       <i class="glyphicon glyphicon-trash"></i>
                  </button>

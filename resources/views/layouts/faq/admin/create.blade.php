@@ -9,8 +9,8 @@
 <div class="col-md-8">
     
                  <h1 class="page-header">
-                     Listado de Faq
-                      <small>Modulo de Faqs</small>
+                     Creado de FAQ
+                      <small>Modulo de Preguntas Frecuentes</small>
                   </h1>
 
     <form action="{{ route('faqs') }}" method="POST" enctype="multipart/form-data">
@@ -20,7 +20,7 @@
 
     <div class="form-group has-feedback">
             <input type="text" class="form-control" id="question" name="question" 
-            placeholder="Ingrese question" value="{{ old('question') }}">
+            placeholder="Ingrese Pregunta" value="{{ old('question') }}">
         </div>
 
     <div class="form-group has-feedback">
