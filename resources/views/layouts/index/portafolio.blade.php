@@ -1,24 +1,23 @@
 <!-- Work -->
 <div class="bg-color-sky-light overflow-h">
-<div class="content-lg container">
-    <div class="row margin-b-40">
-        <div class="col-sm-6">
-            <h2>Showcase</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed tempor incididunt ut laboret dolore magna aliqua enim minim veniam exercitation</p>
-        </div>
-    </div>
+ <div class="content-lg container">
+
+         <div class="row margin-b-40">
+             <div class="col-sm-6">
+                   <h2>Showcase</h2>
+                 <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed tempor incididunt ut laboret dolore magna aliqua enim minim veniam exercitation</p>
+              </div>
+         </div>
     <!--// end row -->
 
     <!-- Masonry Grid -->
     <div class="masonry-grid">
         
-            <div class="masonry-grid-sizer col-xs-6 col-sm-6 col-md-1"></div>
-       
-       
+        <div class="masonry-grid-sizer col-xs-6 col-sm-6 col-md-1"></div>     
         <div class="masonry-grid-item col-xs-12 col-sm-6 col-md-8">
            
-        
         <!-- Work -->
+        
             <div class="work wow fadeInUp" data-wow-duration=".3" data-wow-delay=".1s">
                 <div class="work-overlay">
                     <img class="full-width img-responsive" src="img/800x400/01.jpg" alt="Portfolio Image">

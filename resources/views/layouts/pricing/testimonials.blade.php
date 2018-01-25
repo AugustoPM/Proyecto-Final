@@ -2,7 +2,7 @@
  <div class="content-lg container">
             <div class="row">
                 <div class="col-sm-9">
-                    <h2>Why Customers Are Choosing Asentus?</h2>
+                    <h2>Porque los Clientes Escogen Asentus?</h2>
 
                     <!-- Swiper Testimonials -->
                     <div class="swiper-slider swiper-testimonials">

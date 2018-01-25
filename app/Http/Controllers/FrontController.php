@@ -18,6 +18,7 @@ use App\Testimonial;
 use App\Team;
 use App\Pricing;
 use App\TestimonialPri;
+use App\Slider;
 
 class FrontController extends Controller
 {
@@ -50,9 +51,15 @@ class FrontController extends Controller
     
     public function welcome()
       {
+        $sliders = Slider::all();
+        $products = Product::with('user')
+        ->orderBy('created_at', 'DESC')
+        ->limit(3)
+        ->get();
         $services = Service::all();
         $pricings = Pricing::all();
-       return view('welcome', compact('pricings','services'));
+        $clients = Client::all();
+       return view('welcome', compact('pricings','clients', 'services', 'products', 'sliders'));
     }
 
    
