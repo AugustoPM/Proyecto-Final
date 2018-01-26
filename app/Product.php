@@ -7,10 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class product extends Model
 {
     protected $fillable = [
-        'title', 'subtitle', 'text',
+        'image_name', 'title', 'subtitle', 'text',
     ];
 
-    public function user(){
-        return $this->belongsTo('App\User', 'user_id', 'id');
-    }
+   
 }

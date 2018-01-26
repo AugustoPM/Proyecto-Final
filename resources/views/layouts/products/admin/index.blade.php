@@ -33,6 +33,7 @@
              <table class="table table-bordered">
              <tr>
                  <th>#</th>
+                 <th>Imagen</th>
                  <th>Nombre</th>
                  <th>Categoria</th>
                  <th>Descripcion</th>
@@ -43,6 +44,7 @@
              @foreach($products as $product)
          <tr>
              <td>{{ $product->id }}</td>
+             <td>{{ $product->image_name }}</td>
              <td>{{ $product->title }}</td>
              <td>{{ $product->subtitle }}</td>
              <td>{{ $product->text }}</td>

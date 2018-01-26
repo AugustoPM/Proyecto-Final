@@ -104,3 +104,52 @@ Route::resource('/admin/sliders', 'SliderController', ['names' => [
     'destroy'=>'slider.destroy'
 
 ]]);
+Route::resource('/admin/infos', 'InfosController', ['names' => [
+    'index'=>'infos',
+    'create'=>'infos.create',
+    'store'=>'infos.store',
+    'edit'=>'infos.edit',
+    'update'=>'infos.update',
+    'destroy'=>'infos.destroy'
+
+]]);
+Route::resource('/admin/abouts', 'AboutController', ['names' => [
+    'index'=>'abouts',
+    'create'=>'abouts.create',
+    'store'=>'abouts.store',
+    'edit'=>'abouts.edit',
+    'update'=>'abouts.update',
+    'destroy'=>'abouts.destroy'
+
+]]);
+Route::resource('/admin/services', 'ServiceController', ['names' => [
+    'index'=>'services',
+    'create'=>'services.create',
+    'store'=>'services.store',
+    'edit'=>'services.edit',
+    'update'=>'services.update',
+    'destroy'=>'services.destroy'
+
+]]);
+Route::resource('/admin/testimonials', 'TestimonialController', ['names' => [
+    'index'=>'testimonials',
+    'create'=>'testimonials.create',
+    'store'=>'testimonials.store',
+    'edit'=>'testimonials.edit',
+    'update'=>'testimonials.update',
+    'destroy'=>'testimonials.destroy'
+
+]]);
+Route::resource('/admin/teams', 'TeamController', ['names' => [
+    'index'=>'teams',
+    'create'=>'teams.create',
+    'store'=>'teams.store',
+    'edit'=>'teams.edit',
+    'update'=>'teams.update',
+    'destroy'=>'teams.destroy'
+
+]]);
+
+//Para el correo del formulario
+Route::post('/sendMail','FrontController@sendMail')->name('mail');
+Route::get('/email', 'FrontController@email')->name('email');

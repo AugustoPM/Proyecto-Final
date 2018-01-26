@@ -12,12 +12,6 @@
                      Editado de Slider
                       <small>Modulo de Slider</small>
                   </h1>
-                  @if(session('status'))
-    <div class="alert alert-success alert-dismissible" role="alert">
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-    <strong>Info!</strong> {{ session('status') }}
-    </div>
-    @endif
 
                   <form action="{{ route('slider.update', $slider->id) }}" method="POST">
     {!! csrf_field() !!} <!--  asi evitamos que un robot use nuestro formulario se utiliza put para poder editar el otro controlador que ya fue creado -->

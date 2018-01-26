@@ -44,7 +44,7 @@ class SliderController extends Controller
        $request->validate([
            'title' =>'required',
            'intro' =>'required',
-           'status' =>'required',
+           
                ]);
 
           $slider = Slider::create([
@@ -95,7 +95,7 @@ class SliderController extends Controller
     $request->validate([
         'title' =>'required',
         'intro' =>'required',
-        'status' =>'required',
+        
             ]);
 
        $slider = Slider::find($id);
