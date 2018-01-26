@@ -24,12 +24,12 @@
 
          <ul class="list-of-parts">
            
-                <li>Portadas</li>
-                <li>Services</li>
-                <li>About Description</li>
-                <li>Informacion de About</li>
-                <li>Teams</li>
-                <li>Testimonials</li>
+                <li><a href="{{ route('portadas') }}">Portadas</li>
+                <li><a href="{{ route('services') }}">Services</li>
+                <li><a href="{{ route('abouts') }}">About Description</li>
+                <li><a href="{{ route('infos') }}">Informacion de About</li>
+                <li><a href="{{ route('teams') }}">Teams</li>
+                <li><a href="{{ route('testimonials') }}">Testimonials</li>
                 <li><a href="{{ route('faqs') }}">Faqs</a></li>
                 <li><a href="{{ route('faq2s') }}">Faqs Description</a></li>
                 <li><a href="{{ route('products') }}">Productos</a></li>

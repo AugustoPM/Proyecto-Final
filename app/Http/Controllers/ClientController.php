@@ -118,7 +118,7 @@ class ClientController extends Controller
             $file_name,
             file_get_contents($img->getRealPath())
         );
-    }
+        }
 
 
        $client = Client::find($id);

@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit38f59cd1f238dd197fc9a60fe6078cb0
+class ComposerStaticInit7ce21e010a062f490e606cef76669965
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
@@ -312,12 +312,21 @@ class ComposerStaticInit38f59cd1f238dd197fc9a60fe6078cb0
 
     public static $classMap = array (
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
+        'App\\Contact' => __DIR__ . '/../..' . '/app/Contact.php',
+        'App\\Contactparallax' => __DIR__ . '/../..' . '/app/Contactparallax.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
+        'App\\Faq' => __DIR__ . '/../..' . '/app/Faq.php',
+        'App\\Faq2' => __DIR__ . '/../..' . '/app/Faq2.php',
+        'App\\Faqparallax' => __DIR__ . '/../..' . '/app/Faqparallax.php',
         'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
         'App\\Http\\Controllers\\Auth\\LoginController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/LoginController.php',
         'App\\Http\\Controllers\\Auth\\RegisterController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/RegisterController.php',
         'App\\Http\\Controllers\\Auth\\ResetPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ResetPasswordController.php',
+        'App\\Http\\Controllers\\ContactController' => __DIR__ . '/../..' . '/app/Http/Controllers/ContactController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
+        'App\\Http\\Controllers\\Faq2Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Faq2Controller.php',
+        'App\\Http\\Controllers\\FaqController' => __DIR__ . '/../..' . '/app/Http/Controllers/FaqController.php',
+        'App\\Http\\Controllers\\FrontFaqController' => __DIR__ . '/../..' . '/app/Http/Controllers/FrontFaqController.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\EncryptCookies' => __DIR__ . '/../..' . '/app/Http/Middleware/EncryptCookies.php',
@@ -3102,7 +3111,6 @@ class ComposerStaticInit38f59cd1f238dd197fc9a60fe6078cb0
         'Symfony\\Component\\Debug\\FatalErrorHandler\\FatalErrorHandlerInterface' => __DIR__ . '/..' . '/symfony/debug/FatalErrorHandler/FatalErrorHandlerInterface.php',
         'Symfony\\Component\\Debug\\FatalErrorHandler\\UndefinedFunctionFatalErrorHandler' => __DIR__ . '/..' . '/symfony/debug/FatalErrorHandler/UndefinedFunctionFatalErrorHandler.php',
         'Symfony\\Component\\Debug\\FatalErrorHandler\\UndefinedMethodFatalErrorHandler' => __DIR__ . '/..' . '/symfony/debug/FatalErrorHandler/UndefinedMethodFatalErrorHandler.php',
-        'Symfony\\Component\\EventDispatcher\\ContainerAwareEventDispatcher' => __DIR__ . '/..' . '/symfony/event-dispatcher/ContainerAwareEventDispatcher.php',
         'Symfony\\Component\\EventDispatcher\\Debug\\TraceableEventDispatcher' => __DIR__ . '/..' . '/symfony/event-dispatcher/Debug/TraceableEventDispatcher.php',
         'Symfony\\Component\\EventDispatcher\\Debug\\TraceableEventDispatcherInterface' => __DIR__ . '/..' . '/symfony/event-dispatcher/Debug/TraceableEventDispatcherInterface.php',
         'Symfony\\Component\\EventDispatcher\\Debug\\WrappedListener' => __DIR__ . '/..' . '/symfony/event-dispatcher/Debug/WrappedListener.php',
@@ -3630,10 +3638,10 @@ class ComposerStaticInit38f59cd1f238dd197fc9a60fe6078cb0
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit38f59cd1f238dd197fc9a60fe6078cb0::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit38f59cd1f238dd197fc9a60fe6078cb0::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInit38f59cd1f238dd197fc9a60fe6078cb0::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInit38f59cd1f238dd197fc9a60fe6078cb0::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit7ce21e010a062f490e606cef76669965::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit7ce21e010a062f490e606cef76669965::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit7ce21e010a062f490e606cef76669965::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInit7ce21e010a062f490e606cef76669965::$classMap;
 
         }, null, ClassLoader::class);
     }
