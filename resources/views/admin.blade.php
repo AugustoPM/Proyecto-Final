@@ -44,8 +44,8 @@
                 </ul>
                 <li><a href="{{ route('products') }}">Productos</a></li>
                 <li><a href="{{ route('clients') }}">Clientela</a></li>
-                <li><a href="{{ route('faqs') }}">FAQs</a></li>
-                <li><a href="{{ route('faq2s') }}">Descripcion de FAQs</a></li>
+                <li><a href="{{ route('faqs') }}">Preguntas Frecuentes</a></li>
+                <li><a href="{{ route('faq2s') }}">Pregunta General</a></li>
                 <li><a href="{{ route('contacts') }}">Ciudad</a></li>
          </ul>
            

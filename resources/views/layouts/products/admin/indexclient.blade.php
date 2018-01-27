@@ -33,6 +33,7 @@
              <table class="table table-bordered">
              <tr>
                  <th>#</th>
+                 <th>Imagen</th>
                  <th>Titulo</th>
                  <th>Resume</th>
                 
@@ -42,6 +43,7 @@
              @foreach($clients as $client)
          <tr>
              <td>{{ $client->id }}</td>
+             <td>{{ $client->image_name }}</td>
              <td>{{ $client->title }}</td>
              <td>{{ $client->resume }}</td>
             

@@ -52,10 +52,7 @@ class FrontController extends Controller
     public function welcome()
       {
         $sliders = Slider::all();
-        $products = Product::with('user')
-        ->orderBy('created_at', 'DESC')
-        ->limit(3)
-        ->get();
+        $products = Product::paginate(3);      
         $services = Service::all();
         $pricings = Pricing::all();
         $clients = Client::all();
