@@ -52,7 +52,7 @@ class TeamController extends Controller
         if($request->file('image-file')) {
             $img = $request->file('image-file');
             $file_ext = $img->getClientOriginalExtension();
-            $file_name = $request->input('nombre').".".$file_ext;
+            $file_name = $request->input('id').".".$file_ext;
             Storage::disk('imagesTeam')->put(
                 $file_name,
                 file_get_contents($img->getRealPath())
@@ -116,7 +116,7 @@ class TeamController extends Controller
         if($request->file('image-file')) {
             $img = $request->file('image-file');
             $file_ext = $img->getClientOriginalExtension();
-            $file_name = $request->input('nombre').".".$file_ext;
+            $file_name = $request->input('id').".".$file_ext;
             Storage::disk('imagesTeam')->put(
                 $file_name,
                 file_get_contents($img->getRealPath())
