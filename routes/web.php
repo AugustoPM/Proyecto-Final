@@ -68,6 +68,42 @@ Route::resource('/admin/products', 'ProductController', ['names' => [
     'destroy'=>'product.destroy'
 
 ]]);
+Route::resource('/admin/clients', 'ClientController', ['names' => [
+    'index'=>'clients',
+    'create'=>'client.create',
+    'store'=>'client.store',
+    'edit'=>'client.edit',
+    'update'=>'client.update',
+    'destroy'=>'client.destroy'
+
+]]);
+Route::resource('/admin/pricings', 'PricingController', ['names' => [
+    'index'=>'pricings',
+    'create'=>'pricing.create',
+    'store'=>'pricing.store',
+    'edit'=>'pricing.edit',
+    'update'=>'pricing.update',
+    'destroy'=>'pricing.destroy'
+
+]]);
+Route::resource('/admin/reviews', 'ReviewController', ['names' => [
+    'index'=>'reviews',
+    'create'=>'review.create',
+    'store'=>'review.store',
+    'edit'=>'review.edit',
+    'update'=>'review.update',
+    'destroy'=>'review.destroy'
+
+]]);
+Route::resource('/admin/sliders', 'SliderController', ['names' => [
+    'index'=>'sliders',
+    'create'=>'slider.create',
+    'store'=>'slider.store',
+    'edit'=>'slider.edit',
+    'update'=>'slider.update',
+    'destroy'=>'slider.destroy'
+
+]]);
 Route::resource('/admin/infos', 'InfosController', ['names' => [
     'index'=>'infos',
     'create'=>'infos.create',
@@ -113,4 +149,7 @@ Route::resource('/admin/teams', 'TeamController', ['names' => [
     'destroy'=>'teams.destroy'
 
 ]]);
-    
+
+//Para el correo del formulario
+Route::post('/sendMail','FrontController@sendMail')->name('mail');
+Route::get('/email', 'FrontController@email')->name('email');

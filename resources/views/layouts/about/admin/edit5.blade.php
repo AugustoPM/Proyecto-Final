@@ -16,6 +16,14 @@
                   <form action="{{ route('teams.update', $team->id ) }}" method="POST">
     {!! csrf_field() !!} <!--  asi evitamos que un robot use nuestro formulario se utiliza put para poder editar el otro controlador que ya fue creado -->
     {!! method_field('PUT') !!}
+    <div class="form-group has-feedback {{ $errors->has('image-file') ? 'has-error' : '' }}">
+            <input type="file" class="form-control" id="image-file" name="image-file">
+            @if($errors->has('image-file'))
+                <span class="help-block">
+                    <strong>{{ $errors->first('image-file') }}</strong>
+                </span>
+            @endif
+    </div>
     <div class="form-group has-feedback">
         <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Ingresa nombre" value="{{ $team->nombre }}">
     </div>

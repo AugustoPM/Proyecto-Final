@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use App\Product;
 
 class ProductController extends Controller
@@ -40,23 +41,36 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         $request->validate([
+            'image-file' => 'image|mimes:png,jpg,bmp,svg',
             'title' =>'required',
             'subtitle' =>'required',
             'text' =>'required',
                 ]);
 
-           $product = Product::create([
-                'title' => $request->input('title'),
-                'subtitle' => $request->input('subtitle'),
-                'text' => $request->input('text'),
-                
-            ]);
+                $file_name = 'sinfoto.jpg';
+                if($request->file('image-file')) {
+                $img = $request->file('image-file');
+                $file_ext = $img->getClientOriginalExtension();
+                $file_name = $request->input('title').".".$file_ext;
+                Storage::disk('imagesPosts')->put(
+                $file_name,
+                file_get_contents($img->getRealPath())
+                );
+                }
     
-            return redirect()
-            ->route('products')
-            ->with('status', 'Product Creado Satisfactoriamente');
-        
-    }
+              $product = Product::create([
+                   'image_name' => $file_name,
+                   'title' => $request->input('title'),
+                   'subtitle' => $request->input('subtitle'),
+                   'text' => $request->input('text'),
+                  // 'status' => $request->input('status'),                    
+               ]);
+       
+               return redirect()
+               ->route('products')
+               ->with('status', 'Producto Creado Satisfactoriamente');
+           
+       }
 
     /**
      * Display the specified resource.
@@ -90,19 +104,36 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $product = Product::find($id);
-        $product->update([
-            
-            'title' => $request->input('title'),
-            'subtitle' => $request->input('subtitle'),
-            'text' => $request->input('text'),
-            
-        ]);
+        $request->validate([
+            'image-file' => 'image|mimes:png,jpg,bmp,svg',
+            'title' =>'required',
+            'subtitle' =>'required',
+            'text' =>'required',
+                ]);
 
-        return redirect()
-        ->route('products');
-        // ->with('status', 'Faq Modificado Satisfactoriamente');
-    }
+                $file_name = 'sinfoto.jpg';
+                if($request->file('image-file')) {
+                $img = $request->file('image-file');
+                $file_ext = $img->getClientOriginalExtension();
+                $file_name = $request->input('title').".".$file_ext;
+                Storage::disk('imagesPosts')->put(
+                    $file_name,
+                    file_get_contents($img->getRealPath())
+                );
+            }
+                $product = Product::find($id);
+                $product->update([
+                    'image-file' => $file_name,
+                    'title' => $request->input('title'),
+                    'subtitle' => $request->input('subtitle'),
+                    'text' => $request->input('text'),
+                   // 'status' => $request->input('status'),
+                   
+               ]);
+               return redirect()
+               ->route('products');
+               // ->with('status', 'Faq Modificado Satisfactoriamente');
+           }
 
     /**
      * Remove the specified resource from storage.
@@ -113,7 +144,8 @@ class ProductController extends Controller
     public function destroy($id)
     {
         $product = Product::destroy($id);
-        
+        Storage::disk('imagesPosts')->delete($product->image_name);
+        $product->delete();
 
         return redirect()
         ->route('products')

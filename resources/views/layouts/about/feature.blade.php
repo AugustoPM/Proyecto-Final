@@ -32,7 +32,7 @@
                                         data-dismiss="modal">Salir
                                 </button>
                                
-                            </form>
+                            
                         </div>
                     </div>
                 </div>

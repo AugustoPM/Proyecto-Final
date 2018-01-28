@@ -7,12 +7,14 @@
                         <div class="col-sm-2 sm-margin-b-50">
                             <!-- List -->
                             <ul class="list-unstyled footer-list">
-                            <li class="nav-item"><a class="nav-item-child nav-item-hover" href="{{ route('welcome') }}">{{ $portadas[0]->titulo }}</a></li>
-                            <li class="nav-item"><a class="nav-item-child nav-item-hover" href="{{ route('pricing') }}">{{ $portadas[1]->titulo }}</a></li>
-                            <li class="nav-item"><a class="nav-item-child nav-item-hover" href="{{ route('about') }}">{{ $portadas[2]->titulo }}</a></li>
-                            <li class="nav-item"><a class="nav-item-child nav-item-hover" href="{{ route('product') }}">{{ $portadas[3]->titulo }}</a></li>
-                            <li class="nav-item"><a class="nav-item-child nav-item-hover" href="{{ route('faq') }}">{{ $portadas[4]->titulo }}</a></li>
-                            <li class="nav-item"><a class="nav-item-child nav-item-hover" href="{{ route('contact') }}">{{ $portadas[5]->titulo }}</a></li>
+                                <li class="footer-list-item"><a class="footer-list-link" href="{{ route('welcome') }}">Home</a></li>
+                                <li class="footer-list-item"><a class="footer-list-link" href="{{ route('about') }}">About</a></li>
+                                <li class="footer-list-item"><a class="footer-list-link" href="{{ route('product') }}">Products</a></li>
+                                <li class="footer-list-item"><a class="footer-list-link" href="{{ route('pricing') }}">Pricing</a></li>
+                                <li class="footer-list-item"><a class="footer-list-link" href="#">Clients</a></li>
+                                <li class="footer-list-item"><a class="footer-list-link" href="#">Careers</a></li>
+                                <li class="footer-list-item"><a class="footer-list-link" href="{{ route('contact') }}">Contact</a></li>
+                                <li class="footer-list-item"><a class="footer-list-link" href="#">Terms</a></li>
                             </ul>
                             <!-- End List -->
                         </div>
@@ -28,11 +30,14 @@
                         </div>
                         <div class="col-sm-5 sm-margin-b-30">
                             <h2 class="color-white">Send Us A Note</h2>
-                            <input type="text" class="form-control footer-input margin-b-20" placeholder="Name" required>
-                            <input type="email" class="form-control footer-input margin-b-20" placeholder="Email" required>
-                            <input type="text" class="form-control footer-input margin-b-20" placeholder="Phone" required>
-                            <textarea class="form-control footer-input margin-b-30" rows="6" placeholder="Message" required></textarea>
-                            <button type="submit" class="btn-theme btn-theme-sm btn-base-bg text-uppercase">Submit</button>
+                            <form method='post' action="{{ route('mail') }}">
+                           {!! csrf_field() !!}
+                           <input type="text" class="form-control footer-input margin-b-20" name="name" placeholder="Name" required>
+                           <input type="email" class="form-control footer-input margin-b-20" name="email" placeholder="Email" required>
+                           <input type="text" class="form-control footer-input margin-b-20" name="phone" placeholder="Phone" required>
+                           <textarea class="form-control footer-input margin-b-30" rows="6" name="message" placeholder="Message" required></textarea>
+                           <button type="submit" class="btn-theme btn-theme-sm btn-base-bg text-uppercase">Submit</button>
+                           </form>
                         </div>
                     </div>
                     <!--// end row -->

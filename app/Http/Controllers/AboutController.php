@@ -1,17 +1,12 @@
 <?php
-
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
 use App\AboutDes;
-
 class AboutController extends Controller
 {
-
     public function __construct(){
          $this->middleware('auth');
     }
-
     /**
      * Display a listing of the resource.
      *
@@ -23,7 +18,6 @@ class AboutController extends Controller
         return view('layouts.about.admin.aboutDes', compact('abouts'));
     
     }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -33,7 +27,6 @@ class AboutController extends Controller
     {
         return view('layouts.about.admin.create2');
     }
-
     /**
      * Store a newly created resource in storage.
      *
@@ -43,11 +36,21 @@ class AboutController extends Controller
     public function store(Request $request)
     {
         $request->validate([
+            'image-file' => 'image|mimes:png,jpg,jpeg,bmp,svg',
             'titulo' =>'required',
             'descripcion' =>'required',
                 ]);
-
+                $file_name = 'sinfoto.jpg';
+                if($request->file('image-file')) {
+                    $img = $request->file('image-file');
+                    $file_ext = $img->getClientOriginalExtension();
+                    $file_name = $request->input('nombre').".".$file_ext;
+                    Storage::disk('imagesTeam')->put(
+                        $file_name,
+                        file_get_contents($img->getRealPath())
+                    );
            $about = AboutDes::create([
+                'image_name' => $file_name,
                 'titulo' => $request->input('titulo'),
                 'descripcion' => $request->input('descripcion'),
                 
@@ -60,7 +63,6 @@ class AboutController extends Controller
             ->with('status', 'Descripcion Creada Satisfactoriamente');
         
     }
-
     /**
      * Display the specified resource.
      *
@@ -71,7 +73,6 @@ class AboutController extends Controller
     {
         //
     }
-
     /**
      * Show the form for editing the specified resource.
      *
@@ -83,7 +84,6 @@ class AboutController extends Controller
         $about = AboutDes::find($id);
         return view('layouts.about.admin.edit2', compact('about'));
     }
-
     /**
      * Update the specified resource in storage.
      *
@@ -93,21 +93,33 @@ class AboutController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $request->validate([
+            'image-file' => 'image|mimes:png,jpg,jpeg,bmp,svg',
+            'titulo' =>'required',
+            'descripcion' =>'required',
+                ]);
+                $file_name = 'sinfoto.jpg';
+                if($request->file('image-file')) {
+                    $img = $request->file('image-file');
+                    $file_ext = $img->getClientOriginalExtension();
+                    $file_name = $request->input('titulo').".".$file_ext;
+                    Storage::disk('imagesTeam')->put(
+                        $file_name,
+                        file_get_contents($img->getRealPath())
+                    );
         $about = AboutDes::find($id);
         $about->update([
-            
+            'image_name' => $file_name,
             'titulo' => $request->input('titulo'),
             'descripcion' => $request->input('descripcion'),
             
             // 'status' => $request->input('status'),
             
         ]);
-
         return redirect()
         ->route('abouts');
         // ->with('status', 'Informacion Modificada Satisfactoriamente');
     }
-
     /**
      * Remove the specified resource from storage.
      *
@@ -118,9 +130,10 @@ class AboutController extends Controller
     {
         $about = AboutDes::destroy($id);
         
-
         return redirect()
         ->route('abouts')
         ->with('status', 'Descripcion Eliminada Satisfactoriamente');
     }
 }
+
+

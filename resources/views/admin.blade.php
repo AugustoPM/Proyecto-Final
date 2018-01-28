@@ -23,9 +23,12 @@
              <hr>
 
          <ul class="list-of-parts">
-           
+
+         <li><a href="{{ route('sliders') }}">Slider</a></li>
          <li><a href="{{ route('portadas') }}">Portadas</a></li>
-         <li class="dropdown"><a href="" class="dropdown-toggle nav-item-child nav-item-hover" data-toggle="dropdown"
+                <li><a href="{{ route('pricings') }}">Precios</a></li>
+                <li><a href="{{ route('reviews') }}">Opiniones</a></li>
+                <li class="dropdown"><a href="" class="dropdown-toggle nav-item-child nav-item-hover" data-toggle="dropdown"
                             role="button"
                             aria-expanded="false"
                             aria-haspopup="true">
@@ -40,8 +43,9 @@
                 <li><a href="{{ route('teams') }}">Teams</li>
                 </ul>
                 <li><a href="{{ route('products') }}">Productos</a></li>
-                <li><a href="{{ route('faqs') }}">FAQs</a></li>
-                <li><a href="{{ route('faq2s') }}">Descripcion de FAQs</a></li>
+                <li><a href="{{ route('clients') }}">Clientela</a></li>
+                <li><a href="{{ route('faqs') }}">Preguntas Frecuentes</a></li>
+                <li><a href="{{ route('faq2s') }}">Pregunta General</a></li>
                 <li><a href="{{ route('contacts') }}">Ciudad</a></li>
          </ul>
            

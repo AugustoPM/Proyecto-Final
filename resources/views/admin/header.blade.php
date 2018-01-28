@@ -24,12 +24,12 @@
         <div class="collapse navbar-collapse nav-collapse">
             <div class="menu-container">
                 <ul class="navbar-nav navbar-nav-right">
-                    <li class="nav-item"><a class="nav-item-child nav-item-hover" href="{{ route('welcome') }}">{{ $portadas[0]->titulo }}</a></li>
-                    <li class="nav-item"><a class="nav-item-child nav-item-hover" href="{{ route('pricing') }}">{{ $portadas[1]->titulo }}</a></li>
-                    <li class="nav-item"><a class="nav-item-child nav-item-hover" href="{{ route('about') }}">{{ $portadas[2]->titulo }}</a></li>
-                    <li class="nav-item"><a class="nav-item-child nav-item-hover" href="{{ route('product') }}">{{ $portadas[3]->titulo }}</a></li>
-                    <li class="nav-item"><a class="nav-item-child nav-item-hover" href="{{ route('faq') }}">{{ $portadas[4]->titulo }}</a></li>
-                    <li class="nav-item"><a class="nav-item-child nav-item-hover" href="{{ route('contact') }}">{{ $portadas[5]->titulo }}</a></li>
+                <li class="nav-item"><a class="nav-item-child nav-item-hover" href="{{ route('welcome') }}">Inicio</a></li>
+                <li class="nav-item"><a class="nav-item-child nav-item-hover" href="{{ route('pricing') }}">Precios</a></li>
+                <li class="nav-item"><a class="nav-item-child nav-item-hover" href="{{ route('about') }}">Nosotros</a></li>
+                <li class="nav-item"><a class="nav-item-child nav-item-hover" href="{{ route('product') }}">Productos</a></li>
+                <li class="nav-item"><a class="nav-item-child nav-item-hover" href="{{ route('faq') }}">Preguntas Frecuentes</a></li>
+                <li class="nav-item"><a class="nav-item-child nav-item-hover" href="{{ route('contact') }}">Contacto</a></li>
                   
                     <li class="dropdown"><a href="" class="dropdown-toggle nav-item-child nav-item-hover" data-toggle="dropdown"
                             role="button"

@@ -18,6 +18,7 @@ use App\Testimonial;
 use App\Team;
 use App\Pricing;
 use App\TestimonialPri;
+use App\Slider;
 
 class FrontController extends Controller
 {
@@ -50,10 +51,12 @@ class FrontController extends Controller
     
     public function welcome()
       {
-        $portadas = Portada::all();
+        $sliders = Slider::all();
+        $products = Product::paginate(3);      
         $services = Service::all();
         $pricings = Pricing::all();
-       return view('welcome', compact('pricings','services','portadas'));
+        $clients = Client::all();
+       return view('welcome', compact('pricings','clients', 'services', 'products', 'sliders'));
     }
 
    
@@ -85,4 +88,33 @@ class FrontController extends Controller
        return view('pricing', compact('pricings','testimonials','portadas'));
       }
 
+      public function sendMail(Request $request){
+        header('Content-type: application/json');
+        $status = array(
+            'type'=>'success',
+            'message'=>'Thank you for contact us. As early as possible  we will contact you '
+        );
+    
+        $name       = @trim(stripslashes($request->input('name')));
+        $email      = @trim(stripslashes($request->input('email')));
+        $subject    = @trim(stripslashes($request->input('subjet')));
+        $message    = @trim(stripslashes($request->input('message')));
+    
+        $email_from = $email;
+        $email_to = 'email@email.com';//replace with your email
+    
+        $body = 'Name: ' . $name . "\n\n" . 'Email: ' . $email . "\n\n" . 'Subject: ' . $subject . "\n\n" . 'Message: ' . $message;
+    
+        $success = @mail($email_to, $subject, $body, 'From: <'.$email_from.'>');
+    
+        // echo json_encode($status);
+        // die;
+        return redirect()->route('email')
+   ->with('status','Mensaje creado satisfactoriamente');
+    }
+
+    public function email()
+   {
+    return view('mails.sent');
+ }
 }
