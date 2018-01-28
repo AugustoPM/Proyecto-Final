@@ -10,7 +10,7 @@
     
                  <h1 class="page-header">
                      Creado de Productos
-                      <small>Modulo de Produccion</small>
+                      <small>Modulo de Productos</small>
                   </h1>
 
     <form action="{{ route('products') }}" method="POST" enctype="multipart/form-data">
@@ -18,25 +18,25 @@
     {!! method_field('POST') !!}
 
     <div class="form-group has-feedback {{ $errors->has('image-file') ? 'has-error' : '' }}">
-    <input type="file" class="form-control" id="image-file" name="image-file">
-    @if($errors->has('image-file'))
-        <span class="help-block">
-            <strong>{{ $errors->first('image-file') }}</strong>
-        </span>
-    @endif
-</div>
-
-    <div class="form-group has-feedback">
-            <input type="text" class="form-control" id="title" name="title" 
-            placeholder="Ingrese Producto" value="{{ old('title') }}">
-        </div>
-
-    <div class="form-group has-feedback">
-        <textarea class="form-control" id="subtitle" name="subtitle" placeholder="Ingresa Categoria">{{ old('content') }}</textarea>
+            <input type="file" class="form-control" id="image-file" name="image-file">
+            @if($errors->has('image-file'))
+                <span class="help-block">
+                    <strong>{{ $errors->first('image-file') }}</strong>
+                </span>
+            @endif
     </div>
 
     <div class="form-group has-feedback">
-        <textarea class="form-control" id="text" name="text" placeholder="Ingresa Descripcion">{{ old('content') }}</textarea>
+            <input type="text" class="form-control" id="title" name="title" 
+            placeholder="Ingrese titulo" value="{{ old('title') }}">
+        </div>
+
+    <div class="form-group has-feedback">
+        <textarea class="form-control" id="subtitle" name="subtitle" placeholder="Ingresa subtitulo">{{ old('content') }}</textarea>
+    </div>
+
+    <div class="form-group has-feedback">
+        <textarea class="form-control" id="text" name="text" placeholder="Ingresa texto">{{ old('content') }}</textarea>
     </div>
 
    

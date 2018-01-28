@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\Storage;
-use Illuminate\Http\Request;
 use App\Client;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class ClientController extends Controller
 {
@@ -43,35 +43,34 @@ class ClientController extends Controller
    public function store(Request $request)
    {
        $request->validate([
-           'image-file' => 'image|mimes:png,jpg,jpeg,bmp,svg',
+           'image-file' => 'image|mimes:png,jpg,bmp,svg',
            'title' =>'required',
            'resume' =>'required',
-               ]);
-            
-               $file_name = 'sinfoto.jpg';
-               if($request->file('image-file')) {
-               $img = $request->file('image-file');
-               $file_ext = $img->getClientOriginalExtension();
-               $file_name = $request->input('title').".".$file_ext;
-               Storage::disk('imagesPosts')->put(
-                   $file_name,
-                   file_get_contents($img->getRealPath())
-               );
-               }
+            ]);
+
+            $file_name = 'sinfoto.jpg';
+            if($request->file('image-file')) {
+            $img = $request->file('image-file');
+            $file_ext = $img->getClientOriginalExtension();
+            $file_name = $request->input('title').".".$file_ext;
+            Storage::disk('imagesPosts')->put(
+                $file_name,
+                file_get_contents($img->getRealPath())
+            );
+            }
 
           $client = Client::create([
                'image_name' => $file_name,
                'title' => $request->input('title'),
                'resume' => $request->input('resume'),
-               // 'status' => $request->input('status'),
                
            ]);
    
            return redirect()
            ->route('clients')
-           ->with('status', 'Client Creado Satisfactoriamente');
+           ->with('status', 'Cliente Creado Satisfactoriamente');
        
-   }
+    }
 
    /**
     * Display the specified resource.
@@ -105,10 +104,11 @@ class ClientController extends Controller
     */
    public function update(Request $request, $id)
    {
-    $request->validate([
-        'image-file' => 'image|mimes:png,jpg,jpeg,bmp,svg',
+
+        $request->validate([
+        'image-file' => 'image|mimes:png,jpg,bmp,svg',
         'title' =>'required',
-        'resume' => 'required',
+        'resume' =>'required',
          ]);
 
         $file_name = 'sinfoto.jpg';
@@ -120,14 +120,14 @@ class ClientController extends Controller
             $file_name,
             file_get_contents($img->getRealPath())
         );
-    }
+        }
+
 
        $client = Client::find($id);
        $client->update([
-           'image_name' => $file_name, 
-           'title' => $request->input('title'),
-           'resume' => $request->input('resume'),
-           // 'status' => $request->input('status'),
+            'image_name' => $file_name,
+            'title' => $request->input('title'),
+            'resume' => $request->input('resume'),
            
        ]);
 
@@ -145,10 +145,11 @@ class ClientController extends Controller
    public function destroy($id)
    {
        $client = Client::destroy($id);
-       
+       Storage::disk('imagesPosts')->delete($client->image_name);
+        $client->delete();
 
        return redirect()
        ->route('clients')
-       ->with('status', 'Client Eliminado Satisfactoriamente');
+       ->with('status', 'Cliente Eliminado Satisfactoriamente');
    }
 }
