@@ -24,10 +24,7 @@
                 </span>
             @endif
     </div>
-    <div class="form-group has-feedback">
-            <input type="text" class="form-control" id="image_name" name="image_name" 
-            placeholder="Nombre Imagen" readonly value="{{ $team->image_name }}">
-        </div>
+    
     <div class="form-group has-feedback">
         <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Ingresa nombre" value="{{ $team->nombre }}">
     </div>

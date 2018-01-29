@@ -21,7 +21,7 @@
           
 
                 <a href="{{ route('review.create') }}" class="btn btn-success">
-                <i class="glyphicon glyphicon-list"></i> Nueva FAQ
+                <i class="glyphicon glyphicon-list"></i> Nueva Opinión
                 </a>
 
                 <a href="{{ route('admin') }}" class="btn btn-primary">

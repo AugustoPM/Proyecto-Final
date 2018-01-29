@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Team;
 use Illuminate\Support\Facades\Storage;
+use App\Team;
 
 class TeamController extends Controller
 {
@@ -22,7 +22,6 @@ class TeamController extends Controller
     {
         $teams = Team::all();
         return view('layouts.about.admin.teams', compact('teams'));
-    
     }
 
     /**
@@ -48,6 +47,7 @@ class TeamController extends Controller
             'nombre' =>'required',
             'cargo' =>'required',
             'mensaje' =>'required',
+          
                 ]);
 
                 $file_name = 'sinfoto.jpg';
@@ -55,7 +55,7 @@ class TeamController extends Controller
                 $img = $request->file('image-file');
                 $file_ext = $img->getClientOriginalExtension();
                 $file_name = $request->input('nombre').".".$file_ext;
-                Storage::disk('imagesPosts')->put(
+                Storage::disk('imagesTeam')->put(
                     $file_name,
                     file_get_contents($img->getRealPath())
                 );
@@ -66,7 +66,7 @@ class TeamController extends Controller
                 'nombre' => $request->input('nombre'),
                 'cargo' => $request->input('cargo'),
                 'mensaje' => $request->input('mensaje'),
-                
+     
                 // 'status' => $request->input('status'),
                 
             ]);
@@ -111,8 +111,11 @@ class TeamController extends Controller
     {
 
         $request->validate([
-            'image-file' => 'image|mimes:png,jpg,bmp,svg',
-            'title' =>'required',
+            'image-file' => 'image|mimes:png,jpg,jpeg,bmp,svg',
+            'nombre' =>'required',
+            'cargo' =>'required',
+            'mensaje' =>'required',
+           
              ]);
     
             $file_name = 'sinfoto.jpg';
@@ -120,7 +123,7 @@ class TeamController extends Controller
             $img = $request->file('image-file');
             $file_ext = $img->getClientOriginalExtension();
             $file_name = $request->input('nombre').".".$file_ext;
-            Storage::disk('imagesPosts')->put(
+            Storage::disk('imagesTeam')->put(
                 $file_name,
                 file_get_contents($img->getRealPath())
             );
@@ -132,6 +135,7 @@ class TeamController extends Controller
             'nombre' => $request->input('nombre'),
             'cargo' => $request->input('cargo'),
             'mensaje' => $request->input('mensaje'),
+       
             // 'status' => $request->input('status'),
             
         ]);
@@ -150,9 +154,8 @@ class TeamController extends Controller
     public function destroy($id)
     {
         $team = Team::destroy($id);
-        Storage::disk('imagesPosts')->delete($team->image_name);
-        $team->delete();
-
+       
+        
         return redirect()
         ->route('teams')
         ->with('status', 'Personal Eliminado Satisfactoriamente');

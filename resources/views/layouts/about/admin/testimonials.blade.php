@@ -21,7 +21,7 @@
           
 
             <a href="{{ route('testimonials.create') }}" class="btn btn-success">
-                <i class="glyphicon glyphicon-list"></i> Nuevo Testimonial
+                <i class="glyphicon glyphicon-list"></i> Nuevo Testimonio
                 </a>
 
                 <a href="{{ route('admin') }}" class="btn btn-primary">

@@ -145,8 +145,7 @@ class ClientController extends Controller
    public function destroy($id)
    {
        $client = Client::destroy($id);
-       Storage::disk('imagesPosts')->delete($client->image_name);
-        $client->delete();
+    
 
        return redirect()
        ->route('clients')
