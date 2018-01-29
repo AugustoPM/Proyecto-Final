@@ -23,9 +23,9 @@
                         <p>{{ $team->mensaje }}</p>
                         <a class="link"data-name="{{ $team->nombre }}"
                     data-toggle="modal"
-                    data-target="#read_{{$team->id}}">Read More</a>
+                    data-target="#team_{{$team->id}}">Read More</a>
                     </div>
-                    <div class="modal fade" id="read_{{$team->id}}" tabindex="-1"
+                    <div class="modal fade" id="team_{{$team->id}}" tabindex="-1"
                  role="dialog" aria-labelledby="myModalLabel"
                  aria-hidden="true">
                 <div class="modal-dialog">
