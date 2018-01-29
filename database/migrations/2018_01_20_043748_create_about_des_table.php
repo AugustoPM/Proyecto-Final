@@ -14,8 +14,7 @@ class CreateAboutDesTable extends Migration
     public function up()
     {
         Schema::create('about_des', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('image_name'); 
+            $table->increments('id'); 
             $table->string('titulo');
             $table->string('descripcion');
             $table->timestamps();

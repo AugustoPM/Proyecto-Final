@@ -14,7 +14,7 @@
                 </div>
             </div>
             <div class="promo-section-img-right">
-                <img class="img-responsive" src="{{ asset('images/posts/'.$client->image_name) }}" alt="Content Image">
+                <img class="img-responsive" src="{{ asset('img/images/'.$client->image_name) }}" alt="Content Image">
             </div>
         </div>
         @endforeach

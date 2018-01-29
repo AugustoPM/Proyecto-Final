@@ -15,7 +15,7 @@
                                        {{ $testimonial->nota }}
                                     </div>
                                     
-                                    <p><span class="fweight-700 color-link">{{ $testimonial->escritor}}</span>,CEO</p>
+                                    <p><span class="fweight-700 color-link">{{ $testimonial->escritor}}</span>, Metronic Customer</p>
                                 </blockquote>
                             </div>
                             @endforeach

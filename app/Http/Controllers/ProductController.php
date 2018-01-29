@@ -123,7 +123,7 @@ class ProductController extends Controller
             }
                 $product = Product::find($id);
                 $product->update([
-                    'image-file' => $file_name,
+                    'image_name' => $file_name,
                     'title' => $request->input('title'),
                     'subtitle' => $request->input('subtitle'),
                     'text' => $request->input('text'),

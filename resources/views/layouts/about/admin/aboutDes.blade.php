@@ -33,7 +33,6 @@
                  <th>#</th>
                  <th>Titulo</th>
                  <th>Descripcion</th>
-                 <th>Imagen</th>
                  
                 
                  <th colspan="2">Actions</th>
@@ -44,7 +43,6 @@
              <td>{{ $about->id }}</td>
              <td>{{ $about->titulo }}</td>
              <td>{{ $about->descripcion }}</td>
-             <td>{{ $about->image_name }}</td>
              
             
              
