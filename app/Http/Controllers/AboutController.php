@@ -2,6 +2,8 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\AboutDes;
+use Illuminate\Support\Facades\Storage;
+
 class AboutController extends Controller
 {
     public function __construct(){
@@ -44,15 +46,16 @@ class AboutController extends Controller
                 if($request->file('image-file')) {
                     $img = $request->file('image-file');
                     $file_ext = $img->getClientOriginalExtension();
-                    $file_name = $request->input('nombre').".".$file_ext;
-                    Storage::disk('imagesTeam')->put(
+                    $file_name = $request->input('id').".".$file_ext;
+                    Storage::disk('imagesAbout')->put(
                         $file_name,
                         file_get_contents($img->getRealPath())
                     );
+                }
            $about = AboutDes::create([
-                'image_name' => $file_name,
-                'titulo' => $request->input('titulo'),
-                'descripcion' => $request->input('descripcion'),
+            'image_name' => $file_name,
+            'titulo' => $request->input('titulo'),
+            'descripcion' => $request->input('descripcion'),
                 
                 // 'status' => $request->input('status'),
                 
@@ -102,11 +105,12 @@ class AboutController extends Controller
                 if($request->file('image-file')) {
                     $img = $request->file('image-file');
                     $file_ext = $img->getClientOriginalExtension();
-                    $file_name = $request->input('titulo').".".$file_ext;
-                    Storage::disk('imagesTeam')->put(
+                    $file_name = $request->input('id').".".$file_ext;
+                    Storage::disk('imagesAbout')->put(
                         $file_name,
                         file_get_contents($img->getRealPath())
                     );
+                }
         $about = AboutDes::find($id);
         $about->update([
             'image_name' => $file_name,

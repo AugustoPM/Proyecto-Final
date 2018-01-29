@@ -49,8 +49,7 @@
              <td>{{ $team->nombre }}</td>
              <td>{{ $team->cargo }}</td>
              <td>{{ $team->mensaje }}</td>
-             
-            
+                                      
              
              <td>
                 
@@ -59,7 +58,7 @@
                 </a>
              </td>
              <td>
-                 <button class="btn btn-danger" data-action="{{ route('teams.destroy',$team->id) }}" data-name="{{ $team->id }}" data-toggle="modal"
+                 <button class="btn btn-danger" data-action="{{ route('teams.destroy',$team->id) }}" data-name="{{ $team->nombre }}" data-toggle="modal"
                   data-target="#confirm-delete">
                       <i class="glyphicon glyphicon-trash"></i>
                  </button>
@@ -73,8 +72,7 @@
         
          </table>
 </div>
- 
-<div class="modal fade" id="confirm-delete" tabindex="-1"
+ <div class="modal fade" id="confirm-delete" tabindex="-1"
                  role="dialog" aria-labelledby="myModalLabel"
                  aria-hidden="true">
                 <div class="modal-dialog">

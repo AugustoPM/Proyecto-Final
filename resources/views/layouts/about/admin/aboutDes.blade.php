@@ -31,9 +31,9 @@
              <table class="table table-bordered">
              <tr>
                  <th>#</th>
+                 <th>Imagen</th>
                  <th>Titulo</th>
                  <th>Descripcion</th>
-                 <th>Imagen</th>
                  
                 
                  <th colspan="2">Actions</th>
@@ -42,9 +42,9 @@
              @foreach($abouts as $about)
          <tr>
              <td>{{ $about->id }}</td>
+             <td>{{ $about->image_name }}</td>
              <td>{{ $about->titulo }}</td>
              <td>{{ $about->descripcion }}</td>
-             <td>{{ $about->image_name }}</td>
              
             
              

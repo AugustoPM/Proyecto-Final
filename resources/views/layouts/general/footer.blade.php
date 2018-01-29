@@ -7,25 +7,25 @@
                         <div class="col-sm-2 sm-margin-b-50">
                             <!-- List -->
                             <ul class="list-unstyled footer-list">
-                                <li class="footer-list-item"><a class="footer-list-link" href="{{ route('welcome') }}">Home</a></li>
-                                <li class="footer-list-item"><a class="footer-list-link" href="{{ route('about') }}">About</a></li>
-                                <li class="footer-list-item"><a class="footer-list-link" href="{{ route('product') }}">Products</a></li>
-                                <li class="footer-list-item"><a class="footer-list-link" href="{{ route('pricing') }}">Pricing</a></li>
-                                <li class="footer-list-item"><a class="footer-list-link" href="#">Clients</a></li>
-                                <li class="footer-list-item"><a class="footer-list-link" href="#">Careers</a></li>
-                                <li class="footer-list-item"><a class="footer-list-link" href="{{ route('contact') }}">Contact</a></li>
-                                <li class="footer-list-item"><a class="footer-list-link" href="#">Terms</a></li>
+                                <li class="footer-list-item"><a class="footer-list-link" href="{{ route('welcome') }}">Inicio</a></li>
+                                <li class="footer-list-item"><a class="footer-list-link" href="{{ route('about') }}">Nosotros</a></li>
+                                <li class="footer-list-item"><a class="footer-list-link" href="{{ route('product') }}">Productos</a></li>
+                                <li class="footer-list-item"><a class="footer-list-link" href="{{ route('pricing') }}">Precios</a></li>
+                                <!-- <li class="footer-list-item"><a class="footer-list-link" href="#">Clients</a></li>
+                                <li class="footer-list-item"><a class="footer-list-link" href="#">Careers</a></li> -->
+                                <li class="footer-list-item"><a class="footer-list-link" href="{{ route('contact') }}">Contáctenos</a></li>
+                                <!-- <li class="footer-list-item"><a class="footer-list-link" href="#">Terms</a></li> -->
                             </ul>
                             <!-- End List -->
                         </div>
                         <div class="col-sm-4 sm-margin-b-30">
                             <!-- List -->
-                            <ul class="list-unstyled footer-list">
+                            <!-- <ul class="list-unstyled footer-list">
                                 <li class="footer-list-item"><a class="footer-list-link" href="#">Twitter</a></li>
                                 <li class="footer-list-item"><a class="footer-list-link" href="#">Facebook</a></li>
                                 <li class="footer-list-item"><a class="footer-list-link" href="#">Instagram</a></li>
                                 <li class="footer-list-item"><a class="footer-list-link" href="#">YouTube</a></li>
-                            </ul>
+                            </ul> -->
                             <!-- End List -->
                         </div>
                         <div class="col-sm-5 sm-margin-b-30">

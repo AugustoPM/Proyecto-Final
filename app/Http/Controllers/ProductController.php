@@ -8,9 +8,11 @@ use App\Product;
 
 class ProductController extends Controller
 {
+
     public function __construct(){
         $this->middleware('auth');
    }
+
     /**
      * Display a listing of the resource.
      *
@@ -41,7 +43,7 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'image-file' => 'image|mimes:png,jpg,bmp,svg',
+            'image-file' => 'image|mimes:png,jpg,jpeg,bmp,svg',
             'title' =>'required',
             'subtitle' =>'required',
             'text' =>'required',
@@ -105,7 +107,7 @@ class ProductController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'image-file' => 'image|mimes:png,jpg,bmp,svg',
+            'image-file' => 'image|mimes:png,jpg,jpeg,bmp,svg',
             'title' =>'required',
             'subtitle' =>'required',
             'text' =>'required',
@@ -123,7 +125,7 @@ class ProductController extends Controller
             }
                 $product = Product::find($id);
                 $product->update([
-                    'image-file' => $file_name,
+                    'image_name' => $file_name,
                     'title' => $request->input('title'),
                     'subtitle' => $request->input('subtitle'),
                     'text' => $request->input('text'),
@@ -144,9 +146,7 @@ class ProductController extends Controller
     public function destroy($id)
     {
         $product = Product::destroy($id);
-        Storage::disk('imagesPosts')->delete($product->image_name);
-        $product->delete();
-
+        
         return redirect()
         ->route('products')
         ->with('status', 'Product Eliminado Satisfactoriamente');

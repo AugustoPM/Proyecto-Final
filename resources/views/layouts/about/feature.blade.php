@@ -14,6 +14,7 @@
                     data-target="#read_{{$info->id}}">Read More</a>
                         </div>
                     </div> 
+                    
                     <div class="modal fade" id="read_{{$info->id}}" tabindex="-1"
                  role="dialog" aria-labelledby="myModalLabel"
                  aria-hidden="true">

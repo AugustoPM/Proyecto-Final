@@ -36,12 +36,13 @@
                             </a>
                             <ul class="dropdown-menu">
                                 
-                <li><a href="{{ route('infos') }}">Informacion de About</li>
-                <li><a href="{{ route('abouts') }}">About Description</li>
-                <li><a href="{{ route('services') }}">Services</li>
-                <li><a href="{{ route('testimonials') }}">Testimonials</li>
-                <li><a href="{{ route('teams') }}">Teams</li>
+                <li><a href="{{ route('infos') }}">Informacion de Nosotros</li>
+                <li><a href="{{ route('abouts') }}">Descripción sobre Nosotros</li>
+                <li><a href="{{ route('services') }}">Servicios</li>
+                <li><a href="{{ route('testimonials') }}">Testimonios</li>
+                <li><a href="{{ route('teams') }}">Equipo</li>
                 </ul>
+
                 <li><a href="{{ route('products') }}">Productos</a></li>
                 <li><a href="{{ route('clients') }}">Clientela</a></li>
                 <li><a href="{{ route('faqs') }}">Preguntas Frecuentes</a></li>

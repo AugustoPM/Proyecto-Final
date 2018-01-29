@@ -16,14 +16,6 @@
     <form action="{{ route('abouts') }}" method="POST" enctype="multipart/form-data">
     {!! csrf_field() !!} <!--  asi evitamos que un robot use nuestro formulario -->
     {!! method_field('POST') !!}
-    <div class="form-group has-feedback {{ $errors->has('image-file') ? 'has-error' : '' }}">
-            <input type="file" class="form-control" id="image-file" name="image-file">
-            @if($errors->has('image-file'))
-                <span class="help-block">
-                    <strong>{{ $errors->first('image-file') }}</strong>
-                </span>
-            @endif
-        </div>   
 
 
     <div class="form-group has-feedback">
