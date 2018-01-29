@@ -153,3 +153,6 @@ Route::resource('/admin/teams', 'TeamController', ['names' => [
 //Para el correo del formulario
 Route::post('/sendMail','FrontController@sendMail')->name('mail');
 Route::get('/email', 'FrontController@email')->name('email');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

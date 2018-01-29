@@ -19,6 +19,7 @@ class CreateTeamsTable extends Migration
             $table->string('nombre');
             $table->string('cargo');
             $table->string('mensaje');
+            $table->text('descripcion');
             $table->timestamps();
         });
     }

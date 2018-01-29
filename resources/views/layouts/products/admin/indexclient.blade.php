@@ -55,7 +55,7 @@
                 </a>
              </td>
              <td>
-                 <button class="btn btn-danger" data-action="{{ route('client.destroy',$client->id) }}" data-name="{{ $client->title }}" data-toggle="modal"
+                 <button class="btn btn-danger" data-action="{{ route('client.destroy',$client->id) }}" data-name="{{ $client->question }}" data-toggle="modal"
                   data-target="#confirm-delete">
                       <i class="glyphicon glyphicon-trash"></i>
                  </button>

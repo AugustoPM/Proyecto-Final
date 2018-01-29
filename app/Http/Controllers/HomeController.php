@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Portada;
 
 class HomeController extends Controller
 {
@@ -22,10 +21,8 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function admin()
+    public function index()
     {
-        $portadas = Portada::all();
-       
-        return view('admin', compact('portadas'));
+        return view('home');
     }
 }

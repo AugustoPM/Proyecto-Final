@@ -16,7 +16,7 @@
                     </div>
                 </div>
                 <div class="col-sm-4 col-sm-offset-1">
-                    <img class="img-responsive" src="img/640x380/01.jpg" alt="Our Office">
+                <img class="img-responsive" src="{{ asset('/img/640x380/'.$abouts[0]->image_name) }}" alt="">
                 </div>
             </div>
             <!--// end row -->
