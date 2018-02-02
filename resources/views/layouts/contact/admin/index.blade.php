@@ -21,7 +21,7 @@
           
 
                 <a href="{{ route('city.create') }}" class="btn btn-success">
-                <i class="glyphicon glyphicon-list"></i> New Contacto
+                <i class="glyphicon glyphicon-list"></i> Nuevo Contacto
                 </a>
 
                 <a href="{{ route('admin') }}" class="btn btn-primary">

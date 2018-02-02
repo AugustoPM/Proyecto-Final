@@ -25,7 +25,7 @@
                 </a> -->
 
                 <a href="{{ route('admin') }}" class="btn btn-primary">
-                <i class="glyphicon glyphicon-list"></i> Back
+                <i class="glyphicon glyphicon-list"></i> Atras
                 </a>
 
              <hr>

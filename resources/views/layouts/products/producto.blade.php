@@ -7,7 +7,7 @@
                 <img class="img-responsive" src="{{ asset('img/images/'.$product->image_name) }}" alt="Our Exceptional Solutions Image">
             </div>
         </div>
-        <h3><a href="#">{{ $product->title }}</a> <span class="text-uppercase margin-l-20">{{ $product->subtitle }}</span></h3>
+        <h3><a href="{{ route('pricing') }}">{{ $product->title }}</a> <span class="text-uppercase margin-l-20">{{ $product->subtitle }}</span></h3>
         <p>{{ $product->text }}</p>
        
        

@@ -13,7 +13,7 @@
     <!-- Masonry Grid -->
     <div class="masonry-grid">
         
-        <div class="masonry-grid-sizer col-xs-6 col-sm-6 col-md-1"></div>     
+            
         <div class="masonry-grid-item col-xs-12 col-sm-6 col-md-8">
            
         <!-- Work -->

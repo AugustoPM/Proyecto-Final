@@ -15,7 +15,7 @@
                                     <h3>{{ $service->titulo }}</h3>
                                     <p class="margin-b-5">{{ $service->descripcion }}</p>
                                 </div>
-                                <a href="#" class="content-wrapper-link"></a>    
+                                <a href="{{ route('contact') }}" class="content-wrapper-link"></a>    
                             </div>
                         </div>
                     </div>  
