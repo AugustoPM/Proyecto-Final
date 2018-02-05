@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit38f59cd1f238dd197fc9a60fe6078cb0
+class ComposerStaticInit7ce21e010a062f490e606cef76669965
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
@@ -311,26 +311,51 @@ class ComposerStaticInit38f59cd1f238dd197fc9a60fe6078cb0
     );
 
     public static $classMap = array (
+        'App\\AboutDes' => __DIR__ . '/../..' . '/app/AboutDes.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
+        'App\\Contact' => __DIR__ . '/../..' . '/app/Contact.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
+        'App\\Faq' => __DIR__ . '/../..' . '/app/Faq.php',
+        'App\\Faq2' => __DIR__ . '/../..' . '/app/Faq2.php',
+        'App\\Http\\Controllers\\AboutController' => __DIR__ . '/../..' . '/app/Http/Controllers/AboutController.php',
         'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
         'App\\Http\\Controllers\\Auth\\LoginController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/LoginController.php',
         'App\\Http\\Controllers\\Auth\\RegisterController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/RegisterController.php',
         'App\\Http\\Controllers\\Auth\\ResetPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ResetPasswordController.php',
+        'App\\Http\\Controllers\\ClientController' => __DIR__ . '/../..' . '/app/Http/Controllers/ClientController.php',
+        'App\\Http\\Controllers\\ContactController' => __DIR__ . '/../..' . '/app/Http/Controllers/ContactController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
+        'App\\Http\\Controllers\\Faq2Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Faq2Controller.php',
+        'App\\Http\\Controllers\\FaqController' => __DIR__ . '/../..' . '/app/Http/Controllers/FaqController.php',
+        'App\\Http\\Controllers\\FrontController' => __DIR__ . '/../..' . '/app/Http/Controllers/FrontController.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
+        'App\\Http\\Controllers\\PortadaController' => __DIR__ . '/../..' . '/app/Http/Controllers/PortadaController.php',
+        'App\\Http\\Controllers\\PricingController' => __DIR__ . '/../..' . '/app/Http/Controllers/PricingController.php',
+        'App\\Http\\Controllers\\ProductController' => __DIR__ . '/../..' . '/app/Http/Controllers/ProductController.php',
+        'App\\Http\\Controllers\\ReviewController' => __DIR__ . '/../..' . '/app/Http/Controllers/ReviewController.php',
+        'App\\Http\\Controllers\\SliderController' => __DIR__ . '/../..' . '/app/Http/Controllers/SliderController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\EncryptCookies' => __DIR__ . '/../..' . '/app/Http/Middleware/EncryptCookies.php',
         'App\\Http\\Middleware\\RedirectIfAuthenticated' => __DIR__ . '/../..' . '/app/Http/Middleware/RedirectIfAuthenticated.php',
         'App\\Http\\Middleware\\TrimStrings' => __DIR__ . '/../..' . '/app/Http/Middleware/TrimStrings.php',
         'App\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
+        'App\\InfoAbout' => __DIR__ . '/../..' . '/app/InfoAbout.php',
+        'App\\Portada' => __DIR__ . '/../..' . '/app/Portada.php',
+        'App\\Pricing' => __DIR__ . '/../..' . '/app/Pricing.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
         'App\\Providers\\BroadcastServiceProvider' => __DIR__ . '/../..' . '/app/Providers/BroadcastServiceProvider.php',
         'App\\Providers\\EventServiceProvider' => __DIR__ . '/../..' . '/app/Providers/EventServiceProvider.php',
         'App\\Providers\\RouteServiceProvider' => __DIR__ . '/../..' . '/app/Providers/RouteServiceProvider.php',
+        'App\\Service' => __DIR__ . '/../..' . '/app/Service.php',
+        'App\\Slider' => __DIR__ . '/../..' . '/app/Slider.php',
+        'App\\Team' => __DIR__ . '/../..' . '/app/Team.php',
+        'App\\Testimonial' => __DIR__ . '/../..' . '/app/Testimonial.php',
+        'App\\TestimonialPri' => __DIR__ . '/../..' . '/app/TestimonialPri.php',
         'App\\User' => __DIR__ . '/../..' . '/app/User.php',
+        'App\\client' => __DIR__ . '/../..' . '/app/Client.php',
+        'App\\product' => __DIR__ . '/../..' . '/app/Product.php',
         'ArithmeticError' => __DIR__ . '/..' . '/symfony/polyfill-php70/Resources/stubs/ArithmeticError.php',
         'AssertionError' => __DIR__ . '/..' . '/symfony/polyfill-php70/Resources/stubs/AssertionError.php',
         'Carbon\\Carbon' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Carbon.php',
@@ -3102,7 +3127,6 @@ class ComposerStaticInit38f59cd1f238dd197fc9a60fe6078cb0
         'Symfony\\Component\\Debug\\FatalErrorHandler\\FatalErrorHandlerInterface' => __DIR__ . '/..' . '/symfony/debug/FatalErrorHandler/FatalErrorHandlerInterface.php',
         'Symfony\\Component\\Debug\\FatalErrorHandler\\UndefinedFunctionFatalErrorHandler' => __DIR__ . '/..' . '/symfony/debug/FatalErrorHandler/UndefinedFunctionFatalErrorHandler.php',
         'Symfony\\Component\\Debug\\FatalErrorHandler\\UndefinedMethodFatalErrorHandler' => __DIR__ . '/..' . '/symfony/debug/FatalErrorHandler/UndefinedMethodFatalErrorHandler.php',
-        'Symfony\\Component\\EventDispatcher\\ContainerAwareEventDispatcher' => __DIR__ . '/..' . '/symfony/event-dispatcher/ContainerAwareEventDispatcher.php',
         'Symfony\\Component\\EventDispatcher\\Debug\\TraceableEventDispatcher' => __DIR__ . '/..' . '/symfony/event-dispatcher/Debug/TraceableEventDispatcher.php',
         'Symfony\\Component\\EventDispatcher\\Debug\\TraceableEventDispatcherInterface' => __DIR__ . '/..' . '/symfony/event-dispatcher/Debug/TraceableEventDispatcherInterface.php',
         'Symfony\\Component\\EventDispatcher\\Debug\\WrappedListener' => __DIR__ . '/..' . '/symfony/event-dispatcher/Debug/WrappedListener.php',
@@ -3630,10 +3654,10 @@ class ComposerStaticInit38f59cd1f238dd197fc9a60fe6078cb0
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit38f59cd1f238dd197fc9a60fe6078cb0::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit38f59cd1f238dd197fc9a60fe6078cb0::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInit38f59cd1f238dd197fc9a60fe6078cb0::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInit38f59cd1f238dd197fc9a60fe6078cb0::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit7ce21e010a062f490e606cef76669965::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit7ce21e010a062f490e606cef76669965::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit7ce21e010a062f490e606cef76669965::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInit7ce21e010a062f490e606cef76669965::$classMap;
 
         }, null, ClassLoader::class);
     }
